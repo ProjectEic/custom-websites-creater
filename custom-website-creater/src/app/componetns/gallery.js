@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { BsArrowLeft, BsArrowRight, BsX } from 'react-icons/bs';
@@ -38,7 +38,7 @@ const Gallery = () => {
     setCurrentImage((prevImage) => (prevImage === 0 ? loadedImages.length - 1 : prevImage - 1));
   };
 
-  return (
+return (
     <div className="p-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {loadedImages.map((image, index) => (
@@ -46,7 +46,7 @@ const Gallery = () => {
             <Image
               src={image.default}
               alt="Gallery Image"
-              className="w-full h-auto cursor-pointer"
+              className="w-full h-auto cursor-pointer transition-transform transform hover:scale-105"
               onClick={() => openLightbox(index)}
             />
           </div>
@@ -57,14 +57,14 @@ const Gallery = () => {
           <div className="relative p-4 rounded-md">
             <button
               onClick={closeLightbox}
-              className="absolute top-0 right-0 m-4 text-white text-5xl cursor-pointer"
+              className="absolute top-0 right-0 m-4 text-white text-5xl cursor-pointer hover:text-gray-300 transition-colors"
             >
               <BsX />
             </button>
             <div className="flex justify-between items-center">
               <button
                 onClick={navigatePrevious}
-                className="text-white text-4xl cursor-pointer mr-4"
+                className="text-white text-4xl cursor-pointer mr-4 hover:text-gray-300 transition-colors"
               >
                 <BsArrowLeft />
               </button>
@@ -75,7 +75,7 @@ const Gallery = () => {
               />
               <button
                 onClick={navigateNext}
-                className="text-white text-4xl cursor-pointer ml-4"
+                className="text-white text-4xl cursor-pointer ml-4 hover:text-gray-300 transition-colors"
               >
                 <BsArrowRight />
               </button>
