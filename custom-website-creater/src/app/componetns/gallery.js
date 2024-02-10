@@ -67,6 +67,8 @@ return (
                 <BsArrowLeft />
               </button>
               <Image
+                width={500}
+                height={500}
                 src={loadedImages[currentImage].default}
                 alt="Gallery Image"
                 className="w-full h-[80vh] object-contain border border-white rounded"
