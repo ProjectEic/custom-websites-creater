@@ -1,4 +1,5 @@
-import Gallery from "./componetns/gallery";
+import FileGallery from "./componetns/files_gallery";
+import FirebaseGallery from "./componetns/firebase_gallery";
 import Header from "./componetns/header";
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
           { title: "Contact", href: "/contact" },
         ]}
       />
-      <Gallery />
+      <FirebaseGallery/>
     </div>
   );
 }

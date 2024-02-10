@@ -3,24 +3,20 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { BsArrowLeft, BsArrowRight, BsX } from 'react-icons/bs';
 
-function importAll(r) {
-  return r.keys().map((key) => ({
-    path: key,
-    default: r(key).default,
-  }));
-}
+//
 
-const Gallery = () => {
+const Gallery = (props) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [loadedImages, setLoadedImages] = useState([]);
 
   useEffect(() => {
-    const images = importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
+    const images = props.images;
     setLoadedImages(images);
-  }, []);
+  }, [props]);
 
   const openLightbox = (index) => {
+
     setCurrentImage(index);
     setLightboxOpen(true);
   };
@@ -44,6 +40,8 @@ return (
         {loadedImages.map((image, index) => (
           <div key={index} className="relative">
             <Image
+              width={500}
+              height={500}
               src={image.default}
               alt="Gallery Image"
               className="w-full h-auto cursor-pointer transition-transform transform hover:scale-105"
