@@ -1,12 +1,14 @@
 import { initializeApp } from 'firebase/app';
-import {firebaseConfig} from './firebase_config';
+import {app} from './firebase_config';
 import { getStorage, ref, listAll, getDownloadURL} from "firebase/storage";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 
-
-const app = initializeApp(firebaseConfig);
 
 const storage = getStorage(app);
+
+
+const database = getDatabase(app);
 
 const auth = getAuth(app);
 
@@ -31,4 +33,5 @@ function getFileListLinks() {
 }
 
 
-export {storage, auth, login, uploadFile, getFileListLinks};
+
+export {database, storage, auth, login, uploadFile, getFileListLinks};

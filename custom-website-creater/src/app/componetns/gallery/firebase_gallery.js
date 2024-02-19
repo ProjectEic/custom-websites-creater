@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Gallery from './gallery';
-import { getFileListLinks}  from "../firebase_connecter";
+import { getFileListLinks}  from "../../firebase_connecter";
 
 const FirebaseGallery = () => {
     const [loadedImages, setLoadedImages] = useState([]);

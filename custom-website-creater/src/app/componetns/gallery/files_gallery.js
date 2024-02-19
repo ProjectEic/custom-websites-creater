@@ -11,7 +11,7 @@ function importAll(r) {
 }
 
 const FileGallery = () => {;
-  const images = importAll(require.context(`../img`, false, /\.(png|jpe?g|svg)$/));
+  const images = importAll(require.context(`./img`, false, /\.(png|jpe?g|svg)$/));
   
   return (
     <Gallery 
