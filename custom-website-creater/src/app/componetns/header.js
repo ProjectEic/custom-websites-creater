@@ -2,10 +2,11 @@
 import React from 'react';
 
 const Header = ({ elements }) => {
+
   return (
     <header className="text-white py-4">
         <nav className="container mx-auto">
-            <ul className={`grid grid-cols-${elements.length} justify-evenly`}>
+            <ul className={`flex justify-evenly`}>
                 {elements.map((element, index) => (
                 <li className="text-center" key={index}>
                     <a

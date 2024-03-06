@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { BsArrowLeft, BsArrowRight, BsX } from 'react-icons/bs';
 
-//
-
 const Gallery = (props) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
