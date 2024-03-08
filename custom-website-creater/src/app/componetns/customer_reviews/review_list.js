@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { BsArrowLeft, BsArrowRight, BsX } from 'react-icons/bs';
 import Review from './review';
 
 

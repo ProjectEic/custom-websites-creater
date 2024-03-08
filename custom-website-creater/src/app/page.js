@@ -1,13 +1,14 @@
 import FileGallery from "./componetns/gallery/files_gallery";
 import FirebaseGallery from "./componetns/gallery/firebase_gallery";
-import jsonFormatter from "../app/json_formatter";
+import JsonFormatter from "./jsonFormatter";
 import Header from "./componetns/header";
 import ReviewList from "./componetns/customer_reviews/review_list";
 import FirebaseReviewList from "./componetns/customer_reviews/firebase_review_list";
 import Footer from "./componetns/footer";
 
 export default function Home() {
-  const json = new jsonFormatter("path/to/json");
+  const json = new JsonFormatter("");
+
 
   return (
     <div className="contentWrapper">
@@ -25,9 +26,9 @@ export default function Home() {
       // json.generateLinks() make it equal links
         links={
           [
-            { name: "Instagramm", address: "insta.com", icon: "/instagramm.png"},
-            { name: "TikTok", address: "tiktok.com", icon: "/instagramm.png"},
-            { name: "Meta", address: "meta.com", icon: "/instagramm.png"},
+            { name: "Instagram", address: "insta.com", icon: "/instagram.png"},
+            { name: "TikTok", address: "tiktok.com", icon: "/instagram.png"},
+            { name: "Meta", address: "meta.com", icon: "/instagram.png"},
           ]
         }
         // json.generateFooterInformation() make it equal companySpecs

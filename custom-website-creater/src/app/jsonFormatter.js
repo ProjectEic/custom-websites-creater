@@ -10,6 +10,11 @@ class JsonFormatter {
         }
     }
 
+
+    generateHeaderInformation(){
+        // TODO: Add code here to generate header infomation
+    }
+
     generateFooterInformation() {
         // TODO: Add code here to generate footer information
     }
@@ -18,3 +23,5 @@ class JsonFormatter {
         // TODO: Add code here to generate links
     }
 }
+
+export default JsonFormatter;

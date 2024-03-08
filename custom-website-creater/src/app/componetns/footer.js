@@ -21,6 +21,9 @@ const Footer = ({ links, companySpecs, logo }) => {
         </div>
         {footerCompanySpecifics()}
         <ul className="flex-col md:flex-row flex-wrap items-center">
+          <h3>
+            links:
+          </h3>
           {links.map((link, index) => (
             <li key={index} className="mb-2 md:mb-0 mr-4 flex items-center">
               <a href={link.address} className="text-gray-300 hover:text-white transition duration-300 block">
