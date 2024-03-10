@@ -5,6 +5,7 @@ import Header from "./componetns/header";
 import ReviewList from "./componetns/customer_reviews/review_list";
 import FirebaseReviewList from "./componetns/customer_reviews/firebase_review_list";
 import Footer from "./componetns/footer";
+import instagram from "./icons/instagram.png";
 
 export default function Home() {
   const json = new JsonFormatter("");
@@ -26,17 +27,17 @@ export default function Home() {
       // json.generateLinks() make it equal links
         links={
           [
-            { name: "Instagram", address: "insta.com", icon: "/instagram.png"},
-            { name: "TikTok", address: "tiktok.com", icon: "/instagram.png"},
-            { name: "Meta", address: "meta.com", icon: "/instagram.png"},
+            { name: "Instagram", address: "insta.com", icon: instagram},
+            { name: "TikTok", address: "tiktok.com", icon: instagram},
+            { name: "Meta", address: "meta.com", icon: instagram},
           ]
         }
         // json.generateFooterInformation() make it equal companySpecs
         const companySpecs ={ [
-          "Company Name",
-          "Address",
-          "Email",
-          "Phone",
+          "Company Name: Baumhaus",
+          "Address: Neudietenholz 1, 12345 Baumhausen",
+          "Email: BaumhausGMBH@mail.de",
+          "Phone: 0123456789",
         ]}
       />
     </div>
