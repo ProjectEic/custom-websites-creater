@@ -20,7 +20,7 @@ const footerCompanySpecifics = () => {
 
 
   return (
-    <footer className="bg-gray-800 text-white py-8 px-4 md:px-8 grid grid-cols-3 w-full justify-between items-stretch gap-4 mx-0">
+    <footer id="contactFooter" className="bg-gray-800 text-white py-8 px-4 md:px-8 grid grid-cols-3 w-full justify-between items-stretch gap-4 mx-0">
         {footerCompanySpecifics()}
         <ul className="flex-col md:flex-row flex-wrap items-center border-r pr-4">
           <h3 className="font-semibold text-3xl">

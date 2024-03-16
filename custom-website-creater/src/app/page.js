@@ -15,7 +15,7 @@ export default function Home() {
         elements={[
           { title: "Home", href: "/" },
           { title: "About", href: "/about" },
-          { title: "Contact", href: "/contact" },
+          { title: "Contact", href: "#contactFooter" },
         ]}
       />
       <FirebaseGallery/>
