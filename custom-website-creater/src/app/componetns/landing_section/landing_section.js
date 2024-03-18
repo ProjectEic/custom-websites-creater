@@ -8,7 +8,7 @@ const Landing = (props) => {
     return (
         <main>
             <div className="landingHeadline">
-                <h2 className="font-semibold">
+                <h2 className="font-semibold leading-loose">
                     {props.headline}
                 </h2>
                 <p>
