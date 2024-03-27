@@ -6,7 +6,7 @@ import Footer from "./componetns/footer";
 import instagram from "./icons/instagram.png";
 
 export default function Home() {
-  const json = new JsonFormatter("");
+  // const json = new JsonFormatter("");
 
 
   return (

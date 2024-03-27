@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Review = (props) => {
 
 
-    handleShowIcon = () => {
+    const handleShowIcon = () => {
         return <Image
                 width={50}
                 height={50}
