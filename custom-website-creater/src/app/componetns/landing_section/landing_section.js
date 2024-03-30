@@ -6,15 +6,16 @@ const Landing = (props) => {
     
 
     return (
-        <main>
-            <div className="landingHeadline">
-                <h2 className="font-semibold leading-loose">
+        <main id="Landing">
+            <div className="landingHeadline p-5">
+                <h2 className="font-serif font-semibold leading-loose font-size text-6xl tracking-widest">
                     {props.headline}
                 </h2>
-                <p>
+                <p className="text-gray-300">
                     {props.aboutText}
                 </p>
             </div>
+
         </main>
     )
 

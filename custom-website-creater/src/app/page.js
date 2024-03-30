@@ -4,6 +4,7 @@ import Header from "./componetns/header";
 import FirebaseReviewList from "./componetns/customer_reviews/firebase_review_list";
 import Footer from "./componetns/footer";
 import instagram from "./icons/instagram.png";
+import Landing from "./componetns/landing_section/landing_section";
 
 export default function Home() {
   // const json = new JsonFormatter("");
@@ -14,10 +15,16 @@ export default function Home() {
       <Header 
         elements={[
           { title: "Home", href: "/" },
-          { title: "About", href: "/about" },
+          { title: "About", href: "#Landing" }, // landing section => maybe rephrase to about or start or something
           { title: "Contact", href: "#contactFooter" },
         ]}
       />
+
+<Landing 
+    headline="me"
+    aboutText="No man has been known to mankind which isn't a man who only thinks that mankind can achieve greatness as a man being."
+/>
+
       <FirebaseGallery/>
       <FirebaseReviewList/>
       <Footer
