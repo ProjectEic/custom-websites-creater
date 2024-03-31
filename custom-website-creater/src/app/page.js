@@ -5,6 +5,7 @@ import FirebaseReviewList from "./componetns/customer_reviews/firebase_review_li
 import Footer from "./componetns/footer";
 import instagram from "./icons/instagram.png";
 import Landing from "./componetns/landing_section/landing_section";
+import about from "./icons/about.jpg";
 
 export default function Home() {
   // const json = new JsonFormatter("");
@@ -20,10 +21,11 @@ export default function Home() {
         ]}
       />
 
-<Landing 
-    headline="me"
-    aboutText="No man has been known to mankind which isn't a man who only thinks that mankind can achieve greatness as a man being."
-/>
+      <Landing 
+          headline="me"
+          aboutText="No man has been known to mankind which isn't a man who only thinks that mankind can achieve greatness as a man being. No man has been known to mankind which isn't a man who only thinks that mankind can achieve greatness as a man being."
+          backgroundImageUrl="about"
+      />
 
       <FirebaseGallery/>
       <FirebaseReviewList/>
