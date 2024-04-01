@@ -17,6 +17,7 @@ export default function Home() {
         elements={[
           { title: "Home", href: "/" },
           { title: "About", href: "#Landing" }, // landing section => maybe rephrase to about or start or something
+          { title: "Gallery", href: "#Gallery" },
           { title: "Contact", href: "#contactFooter" },
         ]}
       />
