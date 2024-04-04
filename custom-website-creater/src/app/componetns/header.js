@@ -4,9 +4,9 @@ import React from 'react';
 const Header = ({ elements }) => {
 
   return (
-    <header className="text-white h-10vh">
-        <nav className="container fixed z-10 py-4 max-w-none">
-            <ul className={`flex justify-evenly`}>
+    <header className="text-white h-[8vh]">
+        <nav className="container fixed z-10 max-w-none">
+            <ul className="items-center flex justify-evenly h-[8vh]">
                 {elements.map((element, index) => (
                 <li className="text-center" key={index}>
                     <a

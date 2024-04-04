@@ -8,6 +8,23 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --background-landing: url('./icons/about.jpg');
+
+  /* 
+    colors not properly defined yet => standard color schemes maybe to choose
+    would allow to easily change all colors depending on the wish of the customer 
+    => the idea is to preselect a few coloring options and then let the customer choose which one he likes the most
+  */
+  --main-color: rgb(42, 0, 110);
+  --second-color: rgb(0, 0, 0);
+  --third-color: rgb(255, 255, 255);
+  --surface-color: rgb(0, 0, 0);
+  --onMain-color: rgb(255, 255, 255);
+  --onSecond-color: rgb(255, 255, 255);
+  --onThird-color: rgb(0, 0, 0);
+  --onSurface-color: rgb(255, 255, 255);
+  
+  /* main focus on websit => can be removed here (to make it thiccc again) XD */
+  scrollbar-width: thin;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,11 +46,7 @@ body {
 }
 
 nav {
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb))
-  );
+  background: var(--main-color);
 }
 
 #Landing{

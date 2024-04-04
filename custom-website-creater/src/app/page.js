@@ -41,6 +41,8 @@ export default function Home() {
           ]
         }
         // json.generateFooterInformation() make it equal companySpecs
+
+        // perhaps split into 2 sides => one side category like Address and the other side the actual information => could allow extra style for right side => more focus on it
         const companySpecs ={ [
           "Company Name: Baumhaus",
           "Address: Neudietenholz 1, 12345 Baumhausen",

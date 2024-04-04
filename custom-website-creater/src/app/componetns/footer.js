@@ -28,7 +28,7 @@ const footerCompanySpecifics = () => {
           </h3>
           {links.map((link, index) => (
             <li key={index} className="mb-2 md:mb-0 mr-4 flex items-center pt-4">
-              <a href={link.address} className="text-gray-300 hover:text-white transition duration-300 flex gap-5 text-lg font-normal">
+              <a href={link.address} className="text-gray-300 hover:text-white hover:underline transition duration-300 flex gap-5 text-lg font-normal">
                 {link.icon && (
                   <Image src={link.icon} alt={`${link.name}-icon`} className="mr-2 mt-1 h-fit" width={20} height={20} />
                 )}
@@ -39,8 +39,8 @@ const footerCompanySpecifics = () => {
         </ul>
         <div className="mb-4 md:mb-0 mr-4 flex flex-col"> 
           <Image src={logo} alt="Logo" className="w-32 h-auto" />
-          <a className="text-gray-300 py-2 text-lg font-normal" href="">Impressum</a>
-          <a className="text-gray-300 py-2 text-lg font-normal" href="">Datenschutzerklärung</a>
+          <a className="text-gray-300 py-2 text-lg font-normal hover:text-white hover:underline" href="">Impressum</a>
+          <a className="text-gray-300 py-2 text-lg font-normal hover:text-white hover:underline" href="">Datenschutzerklärung</a>
         </div>
     </footer>
   );

@@ -34,6 +34,7 @@ const Gallery = (props) => {
 
 return (
     <div id="Gallery" className="p-4">
+      <h2 className="text-6xl font-bold py-[10vh]">Gallery</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {loadedImages.map((image, index) => (
           <div key={index} className="relative">
