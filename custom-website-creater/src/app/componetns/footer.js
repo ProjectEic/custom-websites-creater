@@ -1,6 +1,14 @@
 import Image from 'next/image';
 import React from 'react';
 
+
+/**
+ * 
+ * @param {Array} links
+ * @param {Map<String, String>} companySpecs
+ * @param {String} logo
+ * @returns 
+ */
 const Footer = ({ links, companySpecs, logo }) => {
 const footerCompanySpecifics = () => {
   return (
@@ -9,8 +17,13 @@ const footerCompanySpecifics = () => {
         <h3 className="font-semibold text-3xl pr-4 text-white">
           Infos:
         </h3>
-        {companySpecs.map((spec, index) => (
-          <p key={index} className="text-gray-300 py-2 text-lg font-normal">{spec}</p>
+        {Array.from(companySpecs.keys()).map((key, index) => (
+          <p key={index} className="text-gray-300 py-2 text-lg font-normal">
+            {key}:&nbsp;
+            <span className="font-semibold">
+              {companySpecs.get(key)}
+            </span>
+            </p>
         ))}
       </div>
     </div>
