@@ -4,6 +4,7 @@ import FirebaseReviewList from "./componetns/customer_reviews/firebase_review_li
 import Footer from "./componetns/footer";
 import instagram from "./icons/instagram.png";
 import Landing from "./componetns/landing_section/landing_section";
+import Services from "./componetns/services/services";
 
 export default function Home() {
   // const json = new JsonFormatter("");
@@ -26,7 +27,22 @@ export default function Home() {
           backgroundImageUrl="about"
       />
 
+      <Services services={{
+        service1: {
+          name: "Service 1",
+          text: "Description of service 1",
+          icon: true
+        },
+        service2: {
+          name: "Service 2",
+          text: "Description of service 2",
+          icon: true
+        }
+    }}/>
+
       <FirebaseGallery/>
+
+      
       <FirebaseReviewList/>
       <Footer
 

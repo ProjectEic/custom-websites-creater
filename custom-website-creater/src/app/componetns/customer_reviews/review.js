@@ -17,10 +17,10 @@ const Review = (review) => {
 
 
     return (
-        <div className="p-8 bg-[var(--second-color)] rounded-2xl">
+        <div className="p-8 bg-[var(--third-color)] rounded-2xl">
             {review.hasIcon === true ? handleShowIcon() : ""}
-            <h3 className="font-semibold text-3xl pr-4 text-white"> {review.name} </h3>
-            <p className="text-gray-300 py-2 text-lg font-normal"> {review.text} </p>
+            <h3 className="font-semibold text-3xl pr-4 text-[var(--onThird-color)]"> {review.name} </h3>
+            <p className="text-gray-500 py-2 text-lg font-normal"> {review.text} </p>
         </div>
     )
 
