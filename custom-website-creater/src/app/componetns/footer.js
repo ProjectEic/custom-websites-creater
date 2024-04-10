@@ -19,12 +19,23 @@ const footerCompanySpecifics = () => {
         </h3>
         {Array.from(companySpecs.keys()).map((key, index) => (
           <p key={index} className="text-gray-300 py-2 text-lg font-normal">
-            {key}:&nbsp;
-            <span className="font-semibold">
-              {companySpecs.get(key)}
-            </span>
-            </p>
+            {key === "Email" ? (
+                <a href={`mailto:${companySpecs.get(key)}`} key={index} className="">
+                  {key}:&nbsp;<span className="font-semibold underline hover:text-white">{companySpecs.get(key)}</span>
+                </a>
+            ) : key === "Phone" ? (
+                <a href={`tel:${companySpecs.get(key)}`} key={index} className="">
+                    {key}:&nbsp;<span className="font-semibold underline hover:text-white">{companySpecs.get(key)}</span>
+                </a>
+            ) : (
+                <>
+                    {key}:&nbsp;
+                    <span className="font-semibold">{companySpecs.get(key)}</span>
+                </>
+            )}
+          </p>
         ))}
+
       </div>
     </div>
   );
