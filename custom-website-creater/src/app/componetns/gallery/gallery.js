@@ -50,7 +50,7 @@ return (
         ))}
       </div>
       {lightboxOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 w-100 h-100">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 w-100 h-100 pt-[10vh]">
           <div className="relative p-4 rounded-md">
             <button
               onClick={closeLightbox}
