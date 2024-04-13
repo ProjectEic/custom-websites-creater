@@ -15,6 +15,7 @@ export default function Home() {
       <Header 
         elements={[
           { title: "Home",href: "#Landing" }, // landing section => maybe rephrase to about or start or something
+          { title: "Services", href: "#Services" },
           { title: "Gallery", href: "#Gallery" },
           { title: "Reviews", href: "#Reviews"},
           { title: "Contact", href: "#contactFooter" },

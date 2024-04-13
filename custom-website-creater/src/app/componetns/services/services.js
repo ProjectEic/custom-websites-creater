@@ -13,7 +13,7 @@ const Services = ({ services }) => {
     }
 
     return (
-        <section className="p-6">
+        <section className="p-6" id="Services">
             <h2 className="headlineConfig">Services</h2>
             <div className="flex gap-4">
                 {Object.keys(services).map(serviceKey => (
