@@ -14,7 +14,7 @@ const Review = (review) => {
                 className="object-contain border border-white rounded"
               />;
     }
-    const reviewName = review.text.length > 50 ? review.text.slice(0, 50) + '...' : review.text;
+    const reviewName = review.name.length > 50 ? review.name.slice(0, 50) + '...' : review.name;
     const reviewText = review.text.length > 150 ? review.text.slice(0, 150) + '...' : review.text;
 
     return (

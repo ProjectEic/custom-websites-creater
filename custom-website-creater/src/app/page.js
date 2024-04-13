@@ -4,7 +4,7 @@ import FirebaseReviewList from "./componetns/customer_reviews/firebase_review_li
 import Footer from "./componetns/footer";
 import instagram from "./icons/instagram.png";
 import Landing from "./componetns/landing_section/landing_section";
-import Services from "./componetns/services/services";
+import Services from "./componetns/services/services_list"
 
 export default function Home() {
   // const json = new JsonFormatter("");
@@ -28,18 +28,19 @@ export default function Home() {
           backgroundImageUrl="about"
       />
 
-      <Services services={{
-        service1: {
-          name: "Service 1",
-          text: "Description of service 1",
-          icon: true
-        },
-        service2: {
-          name: "Service 2",
-          text: "Description of service 2",
-          icon: true
-        }
-    }}/>
+      <Services services={[
+          {
+              name: "Service 1;Service 1;Service 1Service 1",
+              text: "Description of service 1;Description of service 1;Description of service 1;Description of service 1;Description of service 1;Description of service 1",
+              icon: true
+          },
+          {
+              name: "Service 2",
+              text: "Description of service 2",
+              icon: true
+          }
+      ]} />
+
 
       <FirebaseGallery/>
 
