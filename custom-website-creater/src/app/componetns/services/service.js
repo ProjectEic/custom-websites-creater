@@ -17,7 +17,7 @@ const Service = (service) => {
 
     return (
         <div className="p-4 h-40vh w-[24vw] bg-[var(--third-color)] rounded-2xl">
-            <h3 className="font-semibold text-3xl pr-4 text-[var(--onThird-color)]">{serviceName}</h3>
+            <h3 className="font-semibold text-3xl pr-4 text-[var(--main-color)]">{serviceName}</h3>
             <p className="text-gray-500 py-2 text-lg font-normal text-[var(--onThird-color)]">{serviceText}</p>
             {service.icon ? handleShowIcon(serviceName) : <div className="h-[10vh]"></div>}
         </div>
