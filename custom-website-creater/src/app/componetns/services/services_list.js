@@ -1,5 +1,6 @@
-import React from 'react';
+"use client"
 import Service from "./service";
+import React from 'react';
 
 const Services = ({ services }) => {
     return (
@@ -11,7 +12,8 @@ const Services = ({ services }) => {
                         key={index}
                         name={service.name}
                         text={service.text}
-                        icon={service.icon}
+                        image={service.image}
+                        hasImage={service.hasImage}
                     />
                 ))}
             </div>

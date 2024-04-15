@@ -32,12 +32,14 @@ export default function Home() {
           {
               name: "Service 1;Service 1;Service 1Service 1",
               text: "Description of service 1;Description of service 1;Description of service 1;Description of service 1;Description of service 1;Description of service 1",
-              icon: true
+              image: instagram,
+              hasImage: true
           },
           {
               name: "Service 2",
               text: "Description of service 2",
-              icon: true
+              image: "",
+              hasImage: false
           }
       ]} />
 
