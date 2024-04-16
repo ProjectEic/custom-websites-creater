@@ -103,12 +103,18 @@ section:nth-of-type(2n){
 
 .burgerIcon div {
 	width: 30px;
-	height: 2px;
+	height: 3px;
 	background-color: var(--onMain-color);
 }
 
-.toggleDisplayNone {
+.toggleDisplayNoneNavSlide {
   display: none;
+  transform: translateX(-100%);
+}
+
+.navSlide {
+  transform: translateX(0%);
+  transition: all 1s ease-in-out;
 }
 
 
