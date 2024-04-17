@@ -98,7 +98,6 @@ section:nth-of-type(2n){
   align-items: flex-end;
   flex-direction: column;
   gap: 5px;
-  margin-right: 5vw;
 }
 
 .burgerIcon div {
@@ -108,14 +107,20 @@ section:nth-of-type(2n){
 }
 
 .toggleDisplayNoneNavSlide {
-  display: none;
-  transform: translateX(-100%);
+  display: none !important;
 }
 
 .navSlide {
-  transform: translateX(0%);
+  transform: translateX(150%);
   transition: all 1s ease-in-out;
+  display: none;
 }
+
+.navSlideTranslate{
+  transform: translateX(0%);
+}
+
+
 
 
 @media (max-width: 1000px) {
@@ -130,6 +135,10 @@ section:nth-of-type(2n){
   .burgerIcon {
     display: flex;
   }
+
+  .navSlide{
+    display: flex;
+  }
 }
 
 @media (max-width: 600px) {
@@ -139,5 +148,19 @@ section:nth-of-type(2n){
 
   .responsiveMobileHeader {
     display: flex;
+  }
+}
+
+
+/* Animations */
+
+
+@keyframes navLinksFade {
+  from{
+      opacity: 0;
+      transform: translateX(200%);
+  }to{
+      opacity: 1;
+      transform: translateX(0%);
   }
 }
