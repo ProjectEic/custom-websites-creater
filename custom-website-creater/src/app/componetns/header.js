@@ -1,26 +1,28 @@
 "use client";
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Header = ({ elements }) => {
-
-    // make this perhaps a paramter
     const positionLastElement = elements.length - 1;
-    const [lastElementToCutIndex, setlastElementToCutIndex] = useState(window.innerWidth > 600 ? 0 : 1);
+    const [lastElementToCutIndex, setlastElementToCutIndex] = useState(0);
 
     useEffect(() => {
         const handleResize = () => {
             setlastElementToCutIndex(window.innerWidth > 600 ? 0 : 1);
-            setlastElementToCutIndex(window.innerWidth <= 600 ? 1 : 0);
         };
 
-        window.addEventListener("resize", handleResize);
+        if (typeof window !== 'undefined') {
+            window.addEventListener("resize", handleResize);
+        }
 
         return () => {
-            window.removeEventListener("resize", handleResize);
+            if (typeof window !== 'undefined') {
+                window.removeEventListener("resize", handleResize);
+            }
         };
     }, []);
 
     const handleClickNavSlide = () => {
+        if (typeof document === 'undefined') return;
         const listItems = document.querySelectorAll('.navSlide li');
         const navSlide = document.querySelector(".navSlide");
         navSlide?.classList.toggle("navSlideTranslate");
@@ -63,7 +65,7 @@ const Header = ({ elements }) => {
                     </li>
                     ))}
                 </ul>
-                <div className="responsiveTabletHeader items-center h-[8vh]  w-[95vw] pr-[5vw]">
+                <div className="responsiveTabletHeader items-center h-[8vh] w-[95vw] pr-[5vw]">
                     <div className="items-center flex justify-evenly w-[90%]"> 
                         <a
                             href={elements[0].href}
@@ -103,4 +105,3 @@ const Header = ({ elements }) => {
 };
 
 export default Header;
-

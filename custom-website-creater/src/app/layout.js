@@ -1,17 +1,25 @@
-import { Inter } from "next/font/google";
+"use client";
 import "./globals.css";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import { Inter } from "next/font/google";
+import Datenschutzerklaerung from "./componetns/Datenschutzerklaerung"; 
+import Impressum from "./componetns/Impressum"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "__TITLE__",
-  description: "__DESC__",
-};
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <Router>
+      <html>
+        <body className={inter.className}>
+          <Routes> 
+            <Route path="/" element={children} /> 
+            <Route path="/Datenschutz" element={<Datenschutzerklaerung />} /> 
+            <Route path="/Impressum" element={<Impressum />} /> 
+          </Routes>
+        </body>
+      </html>
+    </Router>
   );
 }

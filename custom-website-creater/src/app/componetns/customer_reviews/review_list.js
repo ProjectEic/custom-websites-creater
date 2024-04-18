@@ -14,7 +14,7 @@ const ReviewList = (props) => {
     return (
         <section id="Reviews" className="p-6">
             <h2 className="headlineConfig">Customer Reviews</h2>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-evenly">
                 {reviews.map((review, index) => (
                     <Review 
                         key={index}

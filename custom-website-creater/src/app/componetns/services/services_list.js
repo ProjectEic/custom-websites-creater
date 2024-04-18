@@ -6,7 +6,7 @@ const Services = ({ services }) => {
     return (
         <section className="p-6" id="Services">
             <h2 className="headlineConfig">Services</h2>
-            <div className="flex gap-4">
+            <div className="servicesContainer flex gap-4">
               {services.map((service, index) => (
                     <Service
                         key={index}
