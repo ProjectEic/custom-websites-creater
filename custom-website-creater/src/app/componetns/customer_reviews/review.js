@@ -31,9 +31,11 @@ const Review = (review) => {
             <p className="text-gray-500 py-2 text-lg font-normal"> {reviewText} </p>
             {lightboxOpen && (
                 <div className="fixed z-40 inset-0 flex-col bg-black bg-opacity-90 w-100 h-100 px-[10vw] py-[20vh]">   
-                    {review.hasIcon ? handleShowIcon(review.name) : <div className=""></div>}    
-                    <h3 className="font-semibold text-3xl pr-4 text-[var(--main-color)]"> {reviewName} </h3>
-                    <p className="text-gray-500 py-2 text-lg font-normal"> {reviewText} </p>
+                    <div className="p-4 rounded-md bg-[var(--main-color)] h-full">
+                        {review.hasIcon ? handleShowIcon(review.name) : <div className=""></div>}    
+                        <h3 className="font-semibold text-3xl pr-4 text-[var(--main-color)]"> {reviewName} </h3>
+                        <p className="text-gray-500 py-2 text-lg font-normal"> {reviewText} </p>
+                    </div>
                 </div>
             )}
         </div>
