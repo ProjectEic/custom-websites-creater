@@ -24,7 +24,6 @@ const Review = (review) => {
     const reviewText = review.text.length > 150 ? review.text.slice(0, 150) + '...' : review.text;
 
     return (
-        // TODO: create lightbox to show entire text of the customer
         <div className="p-10 bg-[var(--third-color)] rounded-2xl" onClick={toggleLightbox}>
             {review.hasIcon === true ? handleShowIcon() : ""}
             <h3 className="font-semibold text-3xl pr-4 text-[var(--surface-color)]"> {reviewName} </h3>

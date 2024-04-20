@@ -14,6 +14,8 @@ const Services = ({ services }) => {
                         text={service.text}
                         image={service.image}
                         hasImage={service.hasImage}
+                        link={service.link}
+                        linkText={service.linkText}
                     />
                 ))}
             </div>

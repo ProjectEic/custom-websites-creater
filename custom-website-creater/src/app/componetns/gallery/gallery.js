@@ -32,6 +32,8 @@ const Gallery = (props) => {
     setCurrentImage((prevImage) => (prevImage === 0 ? loadedImages.length - 1 : prevImage - 1));
   };
 
+
+  // TODO IMG hover effect that allows to display text at the bottom
 return (
     <section id="Gallery" className="p-6">
       <h2 className="headlineConfig">Gallery</h2>
@@ -43,7 +45,7 @@ return (
               height={500}
               src={image.default}
               alt="Gallery Image"
-              className="w-full h-auto cursor-pointer transition-transform transform hover:scale-105"
+              className="w-full h-auto cursor-pointer transition-transform transform rounded-[7px] hover:rounded hover:scale-105"
               onClick={() => openLightbox(index)}
             />
           </div>

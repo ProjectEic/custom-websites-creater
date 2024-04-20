@@ -33,7 +33,9 @@ export default function Home() {
               name: "Service 1;Service 1;Service 1Service 1",
               text: "Description of service 1;Description of service 1;Description of service 1;Description of service 1;Description of service 1;Description of service 1",
               image: instagram,
-              hasImage: true
+              hasImage: true,
+              link: "#contactFooter",
+              linkText: "Kontakt"
           },
           {
               name: "Service 2",
