@@ -83,6 +83,21 @@ section:nth-of-type(2n){
   opacity: 0.85;
 }
 
+.imageContainer:hover span{
+  display: block;
+  position: relative;
+  background-color: var(--onMain-color);
+  color: var(--main-color);
+  transition: all 0.5s ease;
+  padding: 5%;
+  bottom: 10%;
+  width: inherit;
+}
+
+.imageContainer span{
+  bottom: 0;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

@@ -39,15 +39,16 @@ return (
       <h2 className="headlineConfig">Gallery</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {loadedImages.map((image, index) => (
-          <div key={index} className="relative">
+          <div key={index} className="imageContainer relative hover:scale-105">
             <Image
               width={500}
               height={500}
               src={image.default}
               alt="Gallery Image"
-              className="w-full h-auto cursor-pointer transition-transform transform rounded-[7px] hover:rounded hover:scale-105"
+              className="w-full h-auto cursor-pointer transition-transform transform rounded-[7px] hover:rounded"
               onClick={() => openLightbox(index)}
             />
+            <span className="hidden">Kinder die Spaß haben</span>
           </div>
         ))}
       </div>
