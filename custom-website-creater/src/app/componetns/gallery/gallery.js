@@ -48,7 +48,7 @@ return (
               className="w-full h-auto cursor-pointer transition-transform transform rounded-[7px] hover:rounded"
               onClick={() => openLightbox(index)}
             />
-            <span className="hidden">Kinder die Spaß haben</span>
+            <span className="hidden rounded-b-xl">Kinder die Spaß haben</span>
           </div>
         ))}
       </div>
