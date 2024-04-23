@@ -1,7 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { BsX } from 'react-icons/bs';
+import {motion, useInView} from "framer-motion"
 
 const Service = (service) => {
     
@@ -28,9 +29,27 @@ const Service = (service) => {
     
     const serviceName = service.name.length > 20 ? service.name.slice(0, 20) + '...' : service.name;
     const serviceText = service.text.length > 110 ? service.text.slice(0, 110) + '...' : service.text;
+    
+        
+    const serviceRef = useRef(null);
+    const isInView = useInView(serviceRef, { once: true });
+    const initialAnimation = { scale: .25, rotate: -45, opacity: 0.33 };
+    const animateAnimation = { rotate: 0, scale: 1, opacity: 1 };
+    const transitionAnimation = {
+        type: "spring",
+        stiffness: 260,
+        damping: 20
+    };
 
     return (
-        <div className="servicePreviewBox p-4 min-h-40vh w-[24vw] bg-[var(--third-color)] rounded-2xl hover:bg-[var(--main-color)] hover:text-[var(--third-color)] text-[var(--main-color)]" onClick={toggleLightbox}>  
+        <motion.div 
+        initial={isInView ? animateAnimation : initialAnimation}
+        animate={isInView ? animateAnimation : initialAnimation}
+        transition={transitionAnimation}
+        ref={serviceRef}
+        className="servicePreviewBox p-4 h-40vh w-[24vw] bg-[var(--third-color)] rounded-2xl hover:bg-[var(--main-color)] hover:text-[var(--third-color)] text-[var(--main-color)]" 
+        onClick={toggleLightbox}
+        >
             <h3 className="font-semibold text-3xl pr-4">{serviceName}</h3>
             <p className="text-gray-500 py-2 text-lg font-normal">{serviceText}</p>
             {service.hasImage ? handleShowIcon(serviceName) : <div className="h-[10vh]"></div>}
@@ -52,7 +71,7 @@ const Service = (service) => {
                     </div>
                 </div>
             )}
-        </div>
+        </motion.div>
         
 
     )
