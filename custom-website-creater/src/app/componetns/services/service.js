@@ -13,7 +13,7 @@ const Service = (service) => {
             height={50}
             src={service.image}
             alt={name + " icon"}
-            className="object-contain h-fit border border-white rounde text-gray-500"
+            className="object-contain w-[80%] pl-[10%] rounded-2xl text-gray-500"
         />;
     }
 
@@ -30,7 +30,7 @@ const Service = (service) => {
     const serviceText = service.text.length > 110 ? service.text.slice(0, 110) + '...' : service.text;
 
     return (
-        <div className="servicePreviewBox p-4 h-40vh w-[24vw] bg-[var(--third-color)] rounded-2xl hover:bg-[var(--main-color)] hover:text-[var(--third-color)] text-[var(--main-color)]" onClick={toggleLightbox}>  
+        <div className="servicePreviewBox p-4 min-h-40vh w-[24vw] bg-[var(--third-color)] rounded-2xl hover:bg-[var(--main-color)] hover:text-[var(--third-color)] text-[var(--main-color)]" onClick={toggleLightbox}>  
             <h3 className="font-semibold text-3xl pr-4">{serviceName}</h3>
             <p className="text-gray-500 py-2 text-lg font-normal">{serviceText}</p>
             {service.hasImage ? handleShowIcon(serviceName) : <div className="h-[10vh]"></div>}
