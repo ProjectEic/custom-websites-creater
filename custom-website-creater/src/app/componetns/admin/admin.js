@@ -35,7 +35,7 @@ const Admin = () => {
                     <label htmlFor="image" className="block font-semibold mb-1">Image:</label>
                     <input type="file" id="image" onChange={handleImageChange} className="w-full border border-gray-300 rounded px-4 py-2" />
                     {image && (
-                        <div className="mt-2">t
+                        <div className="mt-2">
                             <Image src={URL.createObjectURL(image)} alt="Uploaded" width={200} height={200} />
                             <button type="button" onClick={handleImageDelete} className="mt-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Delete</button>
                         </div>
