@@ -1,7 +1,8 @@
+"use-client"
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { BsX } from 'react-icons/bs';
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const Service = (service) => {
 
@@ -32,12 +33,14 @@ const Service = (service) => {
 
     const serviceRef = useRef(null);
     const isInView = useInView(serviceRef, { once: true });
-    const initialAnimation = { scale: .25, rotate: -45, opacity: 0.33 };
+    const initialAnimation = { scale: .25, rotate: -45, opacity: 0 };
     const animateAnimation = { scale: 1, rotate: 0, opacity: 1 };
     const transitionAnimation = {
         type: "spring",
         stiffness: 250,
-        damping: 20
+        damping: 20,
+        delay: 0.1,
+        transition: 0.5
     };
     const lightboxVariants = {
         hidden: { opacity: 0 },
@@ -67,7 +70,7 @@ const Service = (service) => {
                     exit="exit"
                     variants={lightboxVariants}
                     transition={{ duration: 0.2, delay: 0.4, bounceStiffness: 300, clamp: 20}}
-                    className="fixed z-40 inset-0 flex-col bg-black bg-opacity-90 w-100 h-100 px-[10vw] py-[10vh]"
+                    className="fixed z-40 inset-0 flex-col bg-black bg-opacity-90 px-[10vw] py-[10vh]"
                     onClick={toggleLightbox}
                 >
                     <motion.div 
@@ -80,10 +83,11 @@ const Service = (service) => {
                         {service.icon ? handleShowIcon(service.name) : <div className=""></div>}    
                         <h3 className="font-semibold text-3xl pr-4 text-[var(--onSurface-color)] text-center">{service.name}</h3>
                         <p className="text-gray-300 py-2 text-lg font-normal">{service.text}</p>
-
                         <motion.button
+                            whileTap={{ scale: 0.95 }}
+                            whileHover={{ scale: 1.05 }}
                             onClick={toggleLightbox}
-                            className="absolute top-2 right-2 m-4 text-white text-5xl cursor-pointer hover:text-gray-300 transition-colors"
+                            className="absolute top-2 right-2 text-white text-5xl cursor-pointer hover:text-gray-300 transition-colors"
                         >
                             <BsX/>
                         </motion.button>
@@ -92,7 +96,7 @@ const Service = (service) => {
                 </motion.div>
             )}
         </motion.div>
-    )
+    );
 }
 
 export default Service;

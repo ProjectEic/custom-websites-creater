@@ -14,7 +14,7 @@ const FirebaseGallery = () => {
 
     return (
         <Gallery 
-        images={loadedImages}
+            images={loadedImages}
         />
     );
 };
