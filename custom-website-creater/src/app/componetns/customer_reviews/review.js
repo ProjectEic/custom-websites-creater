@@ -50,7 +50,7 @@ const Review = (review) => {
             whileHover={!lightboxOpen ? { backgroundColor: "var(--main-color)", color: "var(--third-color)", scale: 1.025 } : {}}
             whileTap={!lightboxOpen ? { scale: .95 } : {}}
             ref={reviewRef}
-            className="p-4 bg-[var(--third-color)] rounded-2xl text-[var(--main-color)]" 
+            className="p-4 bg-[var(--third-color)] rounded-2xl text-[var(--main-color)] w-[25%]" 
             onClick={toggleLightbox}
         >
             {review.hasIcon === true ? handleShowIcon() : <div className=""/>}

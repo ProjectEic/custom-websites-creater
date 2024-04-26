@@ -1,6 +1,8 @@
+"use client";
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from "next/link";
+import { motion, useInView } from 'framer-motion';
 
 /**
  * 
@@ -10,9 +12,26 @@ import Link from "next/link";
  * @returns 
  */
 const Footer = ({ links, companySpecs, logo }) => {
+  
+  const footerInfosRef = useRef(null);
+  const footerLinksRef = useRef(null);
+  const footerSubpagesRef = useRef(null);
+  const isInViewInfos = useInView(footerInfosRef, { once: true });
+  const isInViewLinks = useInView(footerLinksRef, { once: true });
+  const isInViewSubpages = useInView(footerSubpagesRef, { once: true });
+  const initialAnimation = { opacity: 0, scale: .99};
+  const animateAnimation = { opacity: 1, scale: 1 };
+  const transitionAnimation = { delay: 0.2, duration: 0.6, ease: "easeInOut" };
+
   const footerCompanySpecifics = () => {
     return (
-      <div className="mb-4 md:mb-0 flex items-stretch"> 
+      <motion.div
+        ref={footerInfosRef}
+        initial={isInViewInfos ? animateAnimation : initialAnimation}
+        animate={isInViewInfos ? animateAnimation : initialAnimation}
+        transition={transitionAnimation}
+        className="mb-4 md:mb-0 flex items-stretch"
+      > 
         <div className="flex-grow border-r pr-4"> 
           <h3 className="font-semibold text-3xl pr-4 text-white">
             Infos:
@@ -37,14 +56,20 @@ const Footer = ({ links, companySpecs, logo }) => {
           ))}
 
         </div>
-      </div>
+      </motion.div>
     );
   };
 
   return (
     <footer id="contactFooter" className="bg-gray-800 text-white py-8 px-4 md:px-8 grid grid-cols-3 w-full justify-between items-stretch gap-4 mx-0">
         {footerCompanySpecifics()}
-        <ul className="flex-col md:flex-row flex-wrap items-center border-r pr-4">
+        <motion.ul 
+          ref={footerLinksRef}
+          initial={isInViewLinks ? animateAnimation : initialAnimation}
+          animate={isInViewLinks ? animateAnimation : initialAnimation}
+          transition={transitionAnimation}
+          className="flex-col md:flex-row flex-wrap items-center border-r pr-4"
+        >
           <h3 className="font-semibold text-3xl">
             Links:
           </h3>
@@ -58,8 +83,14 @@ const Footer = ({ links, companySpecs, logo }) => {
               </a>
             </li>
           ))}
-        </ul>
-        <div className="mb-4 md:mb-0 mr-4 flex flex-col"> 
+        </motion.ul>
+        <motion.div 
+          ref={footerSubpagesRef}
+          initial={isInViewSubpages ? animateAnimation : initialAnimation}
+          animate={isInViewSubpages ? animateAnimation : initialAnimation}
+          transition={transitionAnimation}
+          className="mb-4 md:mb-0 mr-4 flex flex-col"
+        > 
           <Image src={logo} alt="Logo" className="w-32 h-auto" />
           <Link className="text-gray-300 py-2 text-lg font-normal hover:text-white hover:underline" href="/Impressum">
             Impressum
@@ -67,7 +98,7 @@ const Footer = ({ links, companySpecs, logo }) => {
           <Link className="text-gray-300 py-2 text-lg font-normal hover:text-white hover:underline" href="/Datenschutz">
             Datenschutzerklärung
           </Link>
-        </div>
+        </motion.div>
     </footer>
   );
 };
