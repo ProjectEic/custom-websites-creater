@@ -28,7 +28,7 @@ const Datenschutzerklaerung = () => {
       <p className="mb-2"><strong>Auskunftsrecht:</strong></p>
       <p className="mb-2">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Kontaktieren Sie uns auf Wunsch. Die Kontaktdaten finden Sie in unserem Impressum.</p>
 
-      <p className="mt-10 hover:text-gray-400 cursor-pointer"><a href="/">Back to the Homepage</a></p>
+      <p className="mt-10 hover:text-gray-400 hover:underline cursor-pointer"><a href="/">Back to the Homepage</a></p>
     </div>
   );
 };

@@ -29,7 +29,7 @@ const Impressum = () => {
       <p className="mb-2"><b>Datenschutzerklärung:</b></p>
       <p className="mb-2">Unsere Datenschutzerklärung finden Sie <a href="/Datenschutz">hier</a>.</p>
 
-      <p className="mt-10 hover:text-gray-400 cursor-pointer"><a href="/">Back to the Homepage</a></p>
+      <p className="mt-10 hover:text-gray-400 hover:underline cursor-pointer"><a href="/">Back to the Homepage</a></p>
     </div>
   );
 }
