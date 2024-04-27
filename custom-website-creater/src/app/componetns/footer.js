@@ -75,11 +75,11 @@ const Footer = ({ links, companySpecs, logo }) => {
           </h3>
           {links.map((link, index) => (
             <li key={index} className="mb-2 md:mb-0 mr-4 flex items-center pt-4">
-              <a className="text-gray-300 hover:text-white hover:underline transition duration-300 flex gap-5 text-lg font-normal">
+              <a className="text-gray-300 transition duration-300 flex gap-5 text-lg font-normal hover:text-white">
                 {link.icon && (
                   <Image src={link.icon} alt={`${link.name}-icon`} className="mr-2 mt-1 h-fit" width={20} height={20} />
                 )}
-                {link.name}
+                <span class="hoverUnderlineEffect">{link.name}</span>
               </a>
             </li>
           ))}
@@ -92,10 +92,10 @@ const Footer = ({ links, companySpecs, logo }) => {
           className="mb-4 md:mb-0 mr-4 flex flex-col"
         > 
           <Image src={logo} alt="Logo" className="w-32 h-auto" />
-          <Link className="text-gray-300 py-2 text-lg font-normal hover:text-white hover:underline" href="/Impressum">
+          <Link className="hoverUnderlineEffect text-gray-300 py-2 font-normal hover:text-white w-fit text-[1.125rem]" href="/Impressum">
             Impressum
           </Link>
-          <Link className="text-gray-300 py-2 text-lg font-normal hover:text-white hover:underline" href="/Datenschutz">
+          <Link className="hoverUnderlineEffect text-gray-300 py-2 font-normal hover:text-white w-fit text-[1.125rem]" href="/Datenschutz">
             Datenschutzerklärung
           </Link>
         </motion.div>

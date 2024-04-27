@@ -55,7 +55,7 @@ const Review = (review) => {
         >
             {review.hasIcon === true ? handleShowIcon() : <div className=""/>}
             <h3 className="font-semibold text-3xl pr-4 text-[var(--surface-color)]"> {reviewName} </h3>
-            <p className="text-gray-500 py-2 text-lg font-normal"> {reviewText} </p>
+            <p className="text-gray-500 py-2 text-lg font-normal leading-tight"> {reviewText} </p>
             {lightboxOpen && (
                 <motion.div 
                     initial="hidden"

@@ -60,7 +60,7 @@ const Service = (service) => {
             onClick={(e) => toggleLightbox(e)}
         >
             <h3 className="font-semibold text-3xl pr-4">{serviceName}</h3>
-            <p className="text-gray-500 py-2 text-lg font-normal">{serviceText}</p>
+            <p className="text-gray-500 py-2 text-lg font-normal leading-tigh">{serviceText}</p>
             {service.hasImage ? handleShowIcon(serviceName) : <div className="h-[10vh]"></div>}
 
             {lightboxOpen && (
