@@ -25,6 +25,7 @@
   
   /* main focus on websit => can be removed here (to make it thiccc again) XD */
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,6 +48,42 @@ body {
 
 nav {
   background: var(--main-color);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  text-decoration: none;
+  position: relative;
+  opacity: 0.925;
+}
+
+nav ul li:hover {
+  opacity: 1;
+  transition: all 100ms ease 0s;
+}
+
+nav ul li:after {
+  content: "";
+  bottom: -4px;
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  background: #fff;
+  opacity: 0.6;
+  transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
+  width: 0;
+}
+
+nav ul li:hover:after{
+  width: 100%;
+  opacity: 0.9; 
 }
 
 /* Selects every 2nd section */

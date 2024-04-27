@@ -44,9 +44,8 @@ const Header = ({ elements }) => {
                 <ul className="items-center flex justify-evenly h-[8vh] responsiveDesktopHeader">
                     {elements.map((element, index) => (
                     <li className="text-center" key={index}>
-                        <a
-                            href={element.href}
-                            className="text-[var(--onMain-color)] hover:text-gray-300 hover:underline transition duration-300 font-bold text-2xl"
+                        <a  href={element.href}
+                            className="text-[var(--onMain-color)]transition duration-300 font-bold text-2xl"
                         >
                             {element.title}
                         </a>
@@ -56,43 +55,49 @@ const Header = ({ elements }) => {
                 <ul className="flex-col items-center justify-evenly absolute right-0 top-[8vh] h-[92vh] w-[60%] bg-[var(--main-color)] navSlide">
                     {elements.slice(1, positionLastElement + lastElementToCutIndex).map((element, index) => (
                     <li className="text-center" key={index}>
-                        <a
-                        href={element.href}
-                        className="text-[var(--onMain-color)] hover:text-gray-300 hover:underline transition duration-300 font-bold text-2xl"
+                        <a  href={element.href}
+                            className="text-[var(--onMain-color)] hover:text-gray-300 transition duration-300 font-bold text-2xl"
                         >
                         {element.title}
                         </a>
                     </li>
                     ))}
                 </ul>
+                {/* Header For Tablet */}
                 <div className="responsiveTabletHeader items-center h-[8vh] w-[95vw] pr-[5vw]">
-                    <div className="items-center flex justify-evenly w-[90%]"> 
-                        <a
-                            href={elements[0].href}
-                            className="text-[var(--onMain-color)] hover:text-gray-300 hover:underline transition duration-300 font-bold text-2xl"
-                        >
-                            {elements[0].title}
-                        </a>
-                        <a
-                            href={elements[positionLastElement].href}
-                            className="text-[var(--onMain-color)] hover:text-gray-300 hover:underline transition duration-300 font-bold text-2xl"
-                        >
-                            {elements[positionLastElement].title}
-                        </a>
-                    </div>
+                    <ul className="items-center flex justify-evenly w-[90%]"> 
+                        <li>
+                            <a  href={elements[0].href}
+                                className="text-[var(--onMain-color)] transition duration-300 font-bold text-2xl"
+                            >
+                                {elements[0].title}
+                            </a>
+                        </li>
+                        <li>
+                            <a  href={elements[positionLastElement].href}
+                                className="text-[var(--onMain-color)] transition duration-300 font-bold text-2xl"
+                            >
+                                {elements[positionLastElement].title}
+                            </a>
+                        </li>
+                    </ul>
                     <div className="burgerIcon w-[10%] justify-end" onClick={handleClickNavSlide}>
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
                 </div>
+                 {/* Header For Mobile */}
                 <div className="responsiveMobileHeader justify-around items-center h-[8vh]">
-                    <a
-                        href={elements[0].href}
-                        className="text-[var(--onMain-color)] hover:text-gray-300 hover:underline transition duration-300 font-bold text-2xl"
-                    >
-                        {elements[0].title}
-                    </a>
+                    <ul>
+                        <li>
+                            <a  href={elements[0].href}
+                                className="text-[var(--onMain-color)] transition duration-300 font-bold text-2xl"
+                            >
+                                {elements[0].title}
+                            </a>
+                        </li>
+                    </ul>
                     <div className="burgerIcon" onClick={handleClickNavSlide}>
                         <div></div>
                         <div></div>
