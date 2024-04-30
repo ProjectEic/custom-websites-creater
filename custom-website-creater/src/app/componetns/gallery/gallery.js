@@ -58,7 +58,7 @@ const Gallery = (props) => {
       <h2 className="headlineConfig">Gallery</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {loadedImages.map((image, index) => (
-          <ImageItem key={index} image={image} index={index} openLightbox={openLightbox} />
+          <ImageItem key={index} image={image} index={index} openLightbox={openLightbox} text={props.text?props.text[index]:""}/>
         ))}
       </div>
       {lightboxOpen && (
@@ -111,7 +111,7 @@ const Gallery = (props) => {
                 />
                 {/* KINDER DIE SPAß haben ist gehardcoded */}
                 {/* TODO: REMOVE HARDCODING */}
-                <span className="rounded-b-xl">Kinder die Spaß haben</span> 
+                <span className="rounded-b-xl"> {props.text?props.text[index]:""} </span> 
               </motion.div>
               <motion.button
                 onClick={navigateNext}              

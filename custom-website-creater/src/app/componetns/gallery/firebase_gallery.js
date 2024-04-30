@@ -15,6 +15,7 @@ const FirebaseGallery = () => {
     return (
         <Gallery 
             images={loadedImages}
+            text = {loadedImages.map((image) => image.default.split("/").pop().split(".")[0])}
         />
     );
 };

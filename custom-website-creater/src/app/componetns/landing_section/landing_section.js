@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Landing = (props) => {
-
     return (
         <main id="Landing" className="h-[92vh]">
             <motion.div 

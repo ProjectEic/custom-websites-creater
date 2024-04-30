@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useRef } from 'react';
 import Link from "next/link";
 import { motion, useInView } from 'framer-motion';
+import iconMapper from './iconMapper';
 
 /**
  * 
@@ -22,6 +23,7 @@ const Footer = ({ links, companySpecs, logo }) => {
   const initialAnimation = { opacity: 0, scale: .99};
   const animateAnimation = { opacity: 1, scale: 1 };
   const transitionAnimation = { delay: 0.2, duration: 0.6, ease: "easeInOut" };
+
 
   const footerCompanySpecifics = () => {
     return (
@@ -59,7 +61,7 @@ const Footer = ({ links, companySpecs, logo }) => {
       </motion.div>
     );
   };
-
+  
   return (
     <footer id="contactFooter" className="bg-gray-800 text-white py-8 px-4 md:px-8 grid grid-cols-3 w-full justify-between items-stretch gap-4 mx-0">
         {footerCompanySpecifics()}
@@ -73,12 +75,13 @@ const Footer = ({ links, companySpecs, logo }) => {
           <h3 className="font-semibold text-3xl">
             Links:
           </h3>
-          {links.map((link, index) => (
+          
+          {(links?links:[]).map((link, index) => (
             <li key={index} className="mb-2 md:mb-0 mr-4 flex items-center pt-4">
-              <a className="text-gray-300 transition duration-300 flex gap-5 text-lg font-normal hover:text-white">
-                {link.icon && (
-                  <Image src={link.icon} alt={`${link.name}-icon`} className="mr-2 mt-1 h-fit" width={20} height={20} />
-                )}
+              <a className="text-gray-300 transition duration-300 flex gap-5 text-lg font-normal hover:text-white" href={link.link}>
+               
+                  <Image src={iconMapper[link.name.toLowerCase()]} alt={`${link.name}-icon`} className="mr-2 mt-1 h-fit" width={20} height={20} />
+                
                 <span class="hoverUnderlineEffect">{link.name}</span>
               </a>
             </li>

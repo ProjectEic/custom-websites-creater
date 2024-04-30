@@ -5,6 +5,9 @@ import Footer from "./componetns/footer";
 import instagram from "./icons/instagram.png";
 import Landing from "./componetns/landing_section/landing_section";
 import Services from "./componetns/services/services_list"
+import FirebaseServiceList from "./componetns/services/firebase_service_list";
+import FirebaseLanding from "./componetns/landing_section/firebase_landing";
+import FirebaseFooter from "./componetns/footer/firebase_footer";
 
 export default function Home() {
   // const json = new JsonFormatter("");
@@ -22,13 +25,14 @@ export default function Home() {
         ]}
       />
 
-      <Landing 
+      {/* <Landing 
           headline="Baumheim Consulting Gmbh"
           aboutText="No man has been known to mankind which isn't a man who only thinks that mankind can achieve greatness as a man being. No man has been known to mankind which isn't a man who only thinks that mankind can achieve greatness as a man being."
           backgroundImageUrl="about"
-      />
+      /> */}
+      <FirebaseLanding/>
 
-      <Services services={[
+      {/* <Services services={[
           {
               name: "Service 1;Service 1;Service 1Service 1",
               text: "Description of service 1;Description of service 1;Description of service 1;Description of service 1;Description of service 1;Description of service 1",
@@ -43,14 +47,17 @@ export default function Home() {
               image: "",
               hasImage: false
           }
-      ]} />
+      ]} /> */}
+
+      <FirebaseServiceList/>
 
 
       <FirebaseGallery/>
 
       
       <FirebaseReviewList/>
-      <Footer
+
+      {/* <Footer
 
       // json.generateLinks() make it equal links
         links={
@@ -69,7 +76,11 @@ export default function Home() {
             ['Phone', '0123456789']
         ])}
 
-      />
+      /> */}
+
+      <FirebaseFooter/>
+
+
     </div>
   );
 }

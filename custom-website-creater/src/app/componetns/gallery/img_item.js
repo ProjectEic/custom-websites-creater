@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
-const ImageItem = ({ image, index, openLightbox }) => {
+const ImageItem = ({ image, index, openLightbox, text }) => {
     const hoverImageShowText = useAnimation();
     const imgRef = useRef(null);
     const handleHoverStart = () => {
@@ -58,7 +58,7 @@ const ImageItem = ({ image, index, openLightbox }) => {
             animate={hoverImageShowText}
             transition={{ duration: 0.2, ease: "easeInOut" }}
             >
-            Kinder die Spaß haben
+            {text}
             </motion.span>
         </motion.div>
     );
