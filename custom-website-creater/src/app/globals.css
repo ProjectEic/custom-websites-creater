@@ -251,6 +251,10 @@ section:nth-of-type(2n){
   .landingHeadline h2{
     font-size: 2.5rem;
   }
+
+  .review{
+    width: 40%;
+  }
 }
 
 
@@ -277,6 +281,10 @@ section:nth-of-type(2n){
     width: 90%;
     margin: 0 5%;
     left: 0;
+  }
+
+  .review{
+    width: 80%;
   }
 }
 
