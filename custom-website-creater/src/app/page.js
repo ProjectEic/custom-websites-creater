@@ -9,6 +9,8 @@ import FirebaseServiceList from "./componetns/services/firebase_service_list";
 import FirebaseLanding from "./componetns/landing_section/firebase_landing";
 import FirebaseFooter from "./componetns/footer/firebase_footer";
 
+import LocalReviewList from "./componetns/customer_reviews/local_review_list";
+
 export default function Home() {
   // const json = new JsonFormatter("");
 
@@ -55,7 +57,7 @@ export default function Home() {
       <FirebaseGallery/>
 
       
-      <FirebaseReviewList/>
+      <LocalReviewList/>
 
       {/* <Footer
 

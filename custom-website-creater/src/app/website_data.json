@@ -1,0 +1,26 @@
+{
+  "footer": {
+    "companySpecs": {
+      "test": 2313213
+    },
+    "links": {
+      "facebook": "https://facebook.com"
+    }
+  },
+  "landing": {
+    "aboutText": "No man has been known to mankind which isn't a man who only thinks that mankind can achieve greatness as a man being. No man has been known to mankind which isn't a man who only thinks that mankind can achieve greatness as a man being.",
+    "headline": "Firebase Überschrift"
+  },
+  "reviews": {
+    "Franz": "Gute Beratung. Es gab viele hunderte Fehlgeburten, wegen den Chemischen Produkten, die hier erfunden worden. Einfach nur bemerkenswert.",
+    "John": "Großartig!",
+    "Timon": "Was ein toller Service, viele Liebe Menschen und hunderte unterernmährte Kinder in der Fabrik, was ein Anblick fühle mich wie in China!"
+  },
+  "services": {
+    "TestService": {
+      "link": "#Kontakt",
+      "linkText": "Kontakt",
+      "text": "Das ist ein Service in Firebase"
+    }
+  }
+}
