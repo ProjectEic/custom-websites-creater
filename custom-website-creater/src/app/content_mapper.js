@@ -39,7 +39,7 @@ const contentMap = {
     displayText: {
         "landing": {title: "Startseite", href:"#Landing"},
         "footer": {title: "Kontakt", href:"#Contact"},
-        "services": {title: "Bewertungen", href:"#Services"},
+        "services": {title: "Dienstleistungen", href:"#Services"},
         "reviews": {title: "Bewertungen", href:"#Reviews"},
         "gallery": {title: "Gallerie", href:"#Gallery"},
         "datenschutz": {title: "Impressum", href:"/Datenschutz"},
