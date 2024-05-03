@@ -23,7 +23,7 @@ const DynamicGallery = ({title}) => {
                     <div key={image} className="flex items-center space-x-2 m-5" style={{position: "relative"}}>
                         <button 
                             onClick={() => { 
-                                deleteFile(image);
+                                deleteFile("/" + image.split("/").pop().split("?")[0]);
                                 setLoadedImages(loadedImages.filter((img) => img !== image));
                             }} 
                             style={{position: "absolute", top: "0px", right: "0px"}}

@@ -32,8 +32,9 @@ function uploadFile(file) {
 }
 
 function deleteFile(file) {
-    const storageRef = ref(storage, file.name);
-    return deleteObject(storageRef);
+    const strRef = ref(storage, file.replace(/\%20/g, " "));
+    console.log(strRef);
+    return deleteObject(strRef);
 }
 
 function getFileListLinks() {
