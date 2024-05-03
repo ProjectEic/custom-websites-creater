@@ -3,12 +3,11 @@ import "./globals.css";
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import { Inter } from "next/font/google";
-import Datenschutzerklaerung from "./componetns/Datenschutz/Datenschutzerklaerung"; 
-import Impressum from "./componetns/Impressum/Impressum"; 
+import Settings from "./website_settings.json";
+import Mapper from "./content_mapper"; 
 import Admin from "./componetns/admin/admin";
 import NotFound from "./404";
-import FirebaseDatenschutz from "./componetns/Datenschutz/firebase_datenschutz";
-import FirebaseImpressum from "./componetns/Impressum/firebase_impressum";
+
 const inter = Inter({ subsets: ["latin"] });
 const title = "My Website"; // TODO: make it DYNAMIC
 const metaData = ""; // TODO: make it DYNAMIC
@@ -25,35 +24,12 @@ export default function RootLayout({ children }) {
           <Routes> 
             <Route path="/" element={children} /> 
             <Route path="/Datenschutz" element={
-            // <Datenschutzerklaerung 
-            //   datenschutz={{
-            //     name: "Franz Ferdinand",
-            //     street: "Stephanstraße 5",
-            //     postCodeWithCity: "76133 Karlsruhe",
-            //     country: "Germany",
-            //     telephone: "+49 721 123456",
-            //     email: "lucaschi@t-online.de",
-            //   }}
-            // />
-            <FirebaseDatenschutz/>
+              Mapper[Settings["mode"]]["datenschutz"]
             
             } /> 
             <Route path="/Impressum" element={
             
-            // <Impressum 
-            //   impressum={
-            //     {
-            //       name: "Franz Ferdinand",
-            //       street: "Stephanstraße 5",
-            //       postCodeWithCity: "76133 Karlsruhe",
-            //       country: "Germany",
-            //       telephone: "+49 721 123456",
-            //       email: "lucaschi@t-online.de",
-            //     }
-            //   }
-            // />
-            
-              <FirebaseImpressum/>
+              Mapper[Settings["mode"]]["impressum"]
 
             } /> 
             <Route path="/admin" element={<Admin/>} />

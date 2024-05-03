@@ -1,0 +1,10 @@
+{
+    "mode": "local",
+    "contents": [
+        "landing",
+        "services",
+        "gallery",
+        "reviews",
+        "footer"
+    ]
+}

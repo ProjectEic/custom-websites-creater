@@ -16,7 +16,7 @@ const FileGallery = () => {;
   return (
     <Gallery 
       images={images}
-      text={images.map((image) => image.default.split("/").pop().split(".")[0])}
+      text={images.map((image) => image.path.split("/").pop().split(".")[0])}
     />
   );
 };
