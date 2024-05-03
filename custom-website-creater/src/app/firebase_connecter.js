@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import {app} from './firebase_config';
-import { getStorage, ref, listAll, getDownloadURL} from "firebase/storage";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getStorage, ref, listAll, getDownloadURL, deleteObject, uploadBytes} from "firebase/storage";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 
@@ -16,9 +16,24 @@ function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
 }
 
+var is_logged_in = true;
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        is_logged_in = true;
+    } else {
+        is_logged_in = false;
+    }
+  });
+
 function uploadFile(file) {
     const storageRef = ref(storage, file.name);
     return uploadBytes(storageRef, file);
+}
+
+function deleteFile(file) {
+    const storageRef = ref(storage, file.name);
+    return deleteObject(storageRef);
 }
 
 function getFileListLinks() {
@@ -33,5 +48,4 @@ function getFileListLinks() {
 }
 
 
-
-export {database, storage, auth, login, uploadFile, getFileListLinks};
+export {database, storage, auth, login, uploadFile, getFileListLinks, is_logged_in, deleteFile};

@@ -6,7 +6,7 @@ const Datenschutzerklaerung = ({datenschutz}) => {
     <div className="Datenschutzerklaerung p-8">
       <h1 className="text-center text-2xl mb-5">Datenschutzerklärung</h1>
       <p className="mb-2"><strong>Verantwortliche Stelle im Sinne der Datenschutzgesetze:</strong></p>
-      <p className="mb-2">{datenschutz.name}<br/>{datenschutz.street}<br/>{datenschutz.postCodeWithCity}<br/>{datenschutz.country}</p>
+      <p className="mb-2">{datenschutz.name}<br/>{datenschutz.street}<br/>{datenschutz.postCodeWithCity}<br/>Deutschland</p>
 
       <p className="mb-2"><strong>Erhebung, Verarbeitung und Nutzung personenbezogener Daten:</strong></p>
       <p className="mb-2">Wir erheben, verarbeiten und nutzen Ihre personenbezogenen Daten nur, soweit sie für die Begründung, inhaltliche Ausgestaltung oder Änderung des Rechtsverhältnisses erforderlich sind (Bestandsdaten). Dies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet. Personenbezogene Daten über die Inanspruchnahme unserer Internetseiten (Nutzungsdaten) erheben, verarbeiten und nutzen wir nur, soweit dies erforderlich ist, um dem Nutzer die Inanspruchnahme des Dienstes zu ermöglichen oder abzurechnen.</p>

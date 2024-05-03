@@ -1,4 +1,12 @@
 {
+  "company_info": {
+    "city": "37351 Dingelstädt",
+    "email": "jakob@rinke-online.de",
+    "name": "Jakob Rinke",
+    "postCodeWithCity": "37351 Dingelstädt",
+    "street": "Am Heidenhang 2 ",
+    "telephone": "+49 152 02861103"
+  },
   "footer": {
     "companySpecs": {
       "test": 2313213

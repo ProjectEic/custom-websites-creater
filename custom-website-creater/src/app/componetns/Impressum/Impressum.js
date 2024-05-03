@@ -7,13 +7,13 @@ const Impressum = ({impressum}) => {
       <h1 className="text-center text-2xl mb-10">Impressum</h1>
 
       <p className="mb-2"><b>Angaben gemäß § 5 TMG:</b></p>
-      <p className="mb-2">{impressum.name}<br/>{impressum.street}<br/> {impressum.postCodeWithCity}<br/>{impressum.country}</p>
+      <p className="mb-2">{impressum.name}<br/>{impressum.street}<br/> {impressum.postCodeWithCity}<br/> Deutschland </p>
 
       <p className="mb-2"><b>Kontakt:</b></p>
       <p className="mb-2">Telefon: {impressum.telephone}<br/>E-Mail: <a href={`mailto:${impressum.email}`}>{impressum.email}</a></p>
 
       <p className="mb-2"><b>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</b></p>
-      <p className="mb-2">{impressum.name}<br/>{impressum.street}<br/> {impressum.postCodeWithCity}<br/>{impressum.country}</p>
+      <p className="mb-2">{impressum.name}<br/>{impressum.street}<br/> {impressum.postCodeWithCity}<br/>Deutschland</p>
 
       <p className="mb-2"><b>Haftungsausschluss:</b></p>
 

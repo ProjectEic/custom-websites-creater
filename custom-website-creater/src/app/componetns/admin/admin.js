@@ -1,47 +1,142 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import {auth, database, is_logged_in} from '../../firebase_connecter';
+import { getDatabase, ref, get, child, set } from "firebase/database";
+import AdminLogin from './adminLogin';
+import iconMapper from '../iconMapper';
+import JsonDictOneSidedEdit from './jsonEditor/jsonDictOneSidedEdit';
+import JsonDictTwoSidedEdit from './jsonEditor/jsonDictTwoSidedEdit';
+import JsonDictTwoSidedEditChosen from './jsonEditor/jsonDictTwoSidedEditChosen';
+import ServicesEdit from './jsonEditor/servicesEdit';
+import DynamicGallery from './jsonEditor/dynamic_gallery';
+
+
+function getDB() {
+    const dbRef = ref(database, "/");
+    return get(dbRef)
+}
+
+
 
 const Admin = () => {
-    const [text, setText] = useState('');
-    const [image, setImage] = useState(null);
+    const [currentJson, setCurrentJson] = useState({});
 
-    const handleTextChange = (e) => {
-        setText(e.target.value);
-    };
+    const [isLoggedIn, setIsLoggedIn] = useState(is_logged_in);
 
-    const handleImageChange = (e) => {
-        setImage(e.target.files[0]);
-    };
 
-    const handleImageDelete = () => {
-        setImage(null);
-    };
+    useEffect(() => {
+        getDB().then((res) => {
+            const v = res.val();
+            setCurrentJson(v)
+        });
+    }, [is_logged_in]);
+
+    // update if user is logged in
+    useEffect(() => {
+        setIsLoggedIn(is_logged_in);
+    }, [is_logged_in]);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Text:', text);
-        console.log('Image:', image);
+        const dbRef = ref(database, "/");
+        var js12 = deepCpy(currentJson);
+        console.log(js12);
+        set(dbRef, js12);
     };
 
+    function deepCpy(obj) {
+        var nowObj = {};
+        for (var k of Array.from(Object.keys(obj))) {
+            if (k=="") { continue; }
+            if (typeof obj[k] == "object") {
+                nowObj[k] = deepCpy(obj[k]);
+            } else if (Array.isArray(obj[k])) {
+                nowObj[k] = obj[k].slice();
+            } else if (typeof obj[k] !== "undefined") {
+                nowObj[k] = obj[k];
+            }
+        }
+        return nowObj;
+    }
+
+    function setDictFunc(dict, arg1) {
+        var newDict = currentJson;
+        for (var k of arg1) {
+            newDict = newDict[k];
+        }
+        newDict = dict;
+        setCurrentJson(JSON.parse(JSON.stringify(currentJson)));
+        // update the diplay
+        
+    }
+
     return (
+        !isLoggedIn ? <AdminLogin /> :
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-3xl font-semibold mb-4">Admin Panel</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                    <label htmlFor="text" className="block font-semibold mb-1">Text:</label>
-                    <input type="text" id="text" value={text} onChange={handleTextChange} className="w-full border border-gray-300 rounded px-4 py-2 text-gray-950" />
+
+                <JsonDictOneSidedEdit
+                    jsonDict={currentJson["landing"] || {}}
+                    title="Hauptseite"
+                />
+
+
+                <JsonDictOneSidedEdit 
+                    jsonDict={currentJson["company_info"] || {}} 
+                    title="Impressum und Datenschutz"
+                />
+
+                <JsonDictTwoSidedEdit
+                    jsonDict={(currentJson["footer"]|| {})["companySpecs"] || {}}
+                    title="Unternehmensdaten"
+                    setDictFunc={setDictFunc}
+                    arg1={["footer", "companySpecs"]}
+                />
+
+                <JsonDictTwoSidedEditChosen
+                    jsonDict={(currentJson["footer"]|| {})["links"] || {}}
+                    title="Links"
+                    setDictFunc={setDictFunc}
+                    Options={Object.keys(iconMapper)}
+                    arg1={["footer", "links"]}
+                />
+
+                <JsonDictTwoSidedEdit
+                    jsonDict={currentJson["reviews"] || {}}
+                    title="Bewertungen"
+                    setDictFunc={setDictFunc}
+                    arg1={["reviews"]}
+                />
+
+                <ServicesEdit 
+                    jsonDict={currentJson["services"] || {}}
+                    title="Dienstleistungen"
+                    setDictFunc={setDictFunc}
+                    arg1={["services"]}
+                />
+
+                <DynamicGallery 
+                    title="Galerie"
+                />
+
+
+                <div className='h-5'>
+
                 </div>
-                <div>
-                    <label htmlFor="image" className="block font-semibold mb-1">Image:</label>
-                    <input type="file" id="image" onChange={handleImageChange} className="w-full border border-gray-300 rounded px-4 py-2" />
-                    {image && (
-                        <div className="mt-2">
-                            <Image src={URL.createObjectURL(image)} alt="Uploaded" width={200} height={200} />
-                            <button type="button" onClick={handleImageDelete} className="mt-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Delete</button>
-                        </div>
-                    )}
-                </div>
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save</button>
+
+
+                <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-10">Speichern</button>
+
+                <button type="button" className='bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600' 
+                    onClick={() => {
+                        window.location.href = "/";
+                    }}
+                >
+                    Speichern und Zurück
+                </button>
+                    
             </form>
         </div>
     );
