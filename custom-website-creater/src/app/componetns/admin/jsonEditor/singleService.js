@@ -14,11 +14,12 @@ function addImgPropIfNecessary(jsonDict) {
 const SingleService = ({jsonDict, onChange}) => {
     addImgPropIfNecessary(jsonDict)
     return (
-        <div className='flex p-10 justify-center align-center items-center'>
+        <div className='flex px-10 justify-center align-center items-start'>
             
             {Array.from(Object.keys(jsonDict)).map((key, index) => {
                 if (key == "image") { 
                     return <ImageSelector 
+                        key={`ImageSelector${index}`}	
                         onChange= { (newVal) => { jsonDict[key] = newVal; onChange(jsonDict); }}
                         defaultVal={jsonDict[key]}
                     />
@@ -40,7 +41,7 @@ const SingleService = ({jsonDict, onChange}) => {
 
                 <button 
                         onClick={() => { onChange(undefined)}} 
-                        className="mt-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 h-10 ml-2">
+                        className="mt-7 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 h-10 ml-2">
                             -
                 </button>
 
