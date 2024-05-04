@@ -1,6 +1,6 @@
 "use client";
 import "./globals.css";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import { Inter } from "next/font/google";
 import Settings from "./website_settings.json";
@@ -13,6 +13,13 @@ const title = "My Website"; // TODO: make it DYNAMIC
 const metaData = ""; // TODO: make it DYNAMIC
 
 export default function RootLayout({ children }) {
+  
+  useEffect(() => {
+    for (let key in Settings["colors"]) {
+      document.documentElement.style.setProperty(`${key}`, Settings["colors"][key]);
+    }
+  });
+
   return (
     <Router>
       <html>

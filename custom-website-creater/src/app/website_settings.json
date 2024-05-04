@@ -6,5 +6,17 @@
         "gallery",
         "reviews",
         "footer"
-    ]
+    ],
+    
+    "colors": {
+        "--main-color": "rgb(50, 0, 160)",
+        "--second-color": "rgb(0, 0, 0)",
+        "--third-color": "rgb(255, 255, 255)",
+        "--surface-color": "rgb(0, 0, 0)",
+        "--onMain-color": "rgb(255, 255, 255)",
+        "--onSecond-color": "rgb(255, 255, 255)",
+        "--onThird-color": "rgb(0, 0, 0)",
+        "--onSurface-color": "rgb(255, 255, 255)"
+    }
+    
 }
