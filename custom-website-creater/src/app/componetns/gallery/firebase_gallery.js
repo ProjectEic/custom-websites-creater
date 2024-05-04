@@ -1,6 +1,6 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Gallery from './gallery';
+"use client";
+import React, { useState, useEffect } from "react";
+import Gallery from "./gallery";
 import { getFileListLinks}  from "../../firebase_connecter";
 
 const FirebaseGallery = () => {

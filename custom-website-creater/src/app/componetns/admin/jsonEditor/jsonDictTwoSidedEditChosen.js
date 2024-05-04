@@ -1,16 +1,16 @@
 "use client";
-import React from 'react';
+import React from "react";
 
 
 
 const JsonDictTwoSidedEditChosen = ({jsonDict, Options, title, setDictFunc, arg1}) => {
 
     return (
-        <div className='mb-10'>
-            <h1 className='text-2xl font-bold mb-4'>
+        <div className="mb-10">
+            <h1 className="text-2xl font-bold mb-4">
                 {title}
             </h1>
-            <div className='block flex-wrap'> 
+            <div className="block flex-wrap"> 
 
                 {Array.from(Object.keys(jsonDict)).map((key, index) => (
                     <div key={key} className="mt-1 mb-1 flex items-center space-x-2">

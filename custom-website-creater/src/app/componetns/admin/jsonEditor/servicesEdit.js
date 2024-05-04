@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState } from 'react';
-import SingleService from './singleService';
+import React, { useEffect } from "react";
+import SingleService from "./singleService";
 
 
 const ServicesEdit = ({jsonDict, title, setDictFunc, arg1}) => {

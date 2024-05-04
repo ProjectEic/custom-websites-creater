@@ -1,7 +1,7 @@
 "use client";
 import "./globals.css";
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { Inter } from "next/font/google";
 import Settings from "./website_settings.json";
 import Mapper from "./content_mapper"; 
@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
 
             } /> 
             <Route path="/admin" element={<Admin/>} />
-            <Route path="*" element={<NotFound/>} /> { /* TODO: CREATE proper 404-Page*/}
+            <Route path="*" element={<NotFound/>} />
           </Routes>
         </body>
       </html>

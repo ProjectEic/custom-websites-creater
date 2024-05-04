@@ -1,10 +1,10 @@
-import website_data from './website_data.json';
+import website_data from "./website_data.json";
 
-function ref(a, b) {
+const ref = (a, b) => {
     return b.replace(/^\//, "");
 }
 console.log(website_data);
-async function get(path) {
+const get = async (path) => {
     return {
         v: website_data[path],
         val: () => website_data[path]

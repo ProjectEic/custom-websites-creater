@@ -1,7 +1,7 @@
 "use-client"
-import React, { useState, useRef } from 'react';
-import Image from 'next/image';
-import { BsX } from 'react-icons/bs';
+import React, { useState, useRef } from "react";
+import Image from "next/image";
+import { BsX } from "react-icons/bs";
 import { motion, useInView } from "framer-motion";
 
 const Service = (service) => {
@@ -28,8 +28,8 @@ const Service = (service) => {
         console.log(e)
     }
 
-    const serviceName = service.name.length > 20 ? service.name.slice(0, 20) + '...' : service.name;
-    const serviceText = service.text.length > 110 ? service.text.slice(0, 110) + '...' : service.text;
+    const serviceName = service.name.length > 20 ? service.name.slice(0, 20) + "..." : service.name;
+    const serviceText = service.text.length > 110 ? service.text.slice(0, 110) + "..." : service.text;
 
     const serviceRef = useRef(null);
     const isInView = useInView(serviceRef, { once: true });

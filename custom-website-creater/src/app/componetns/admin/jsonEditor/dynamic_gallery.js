@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { getFileListLinks, uploadFile, deleteFile}  from "../../../firebase_connecter";
-import Image from 'next/image';
+import Image from "next/image";
 
 const DynamicGallery = ({title}) => {
 
@@ -15,20 +15,19 @@ const DynamicGallery = ({title}) => {
     }, []);
 
     return (
-        <div className='mb-10'>
-            <h1 className='text-2xl font-bold mb-4 mt-5'>
+        <div className="mb-10">
+            <h1 className="text-2xl font-bold mb-4 mt-5">
                 {title}
             </h1>
             <div className="flex flex-wrap">
                 {loadedImages.map((image) => (
-                    <div key={image} className="flex items-center space-x-2 m-5" style={{position: "relative"}}>
+                    <div key={image} className="flex items-center space-x-2 m-5 relative">
                         <button 
                             onClick={() => { 
                                 deleteFile("/" + image.split("/").pop().split("?")[0]);
                                 setLoadedImages(loadedImages.filter((img) => img !== image));
-                            }} 
-                            style={{position: "absolute", top: "0px", right: "0px"}}
-                            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                            }}
+                            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 absolute top-[0px] right-[0px]">
                                 -
                         </button>
                         <Image

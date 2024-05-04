@@ -1,15 +1,14 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import ReviewList from './review_list';
-import {ref, get} from '../../firebase_emulator';
-var database = ""
-function getReviewsDB() {
+"use client";
+import React, { useState, useEffect } from "react";
+import ReviewList from "./review_list";
+import {ref, get} from "../../firebase_emulator";
+
+var database = "";
+
+const getReviewsDB = () => {
     const dbRef = ref(database, "/reviews");
-    return get(dbRef)
+    return get(dbRef);
 }
-
-
-
 
 const LocalReviewList = () => {;
     const [reviews, setReviews] = useState([]);
@@ -20,7 +19,7 @@ const LocalReviewList = () => {;
             const v = res.val();
             console.log(v);
             setReviews(Object.keys(v).map((key) => {
-                return {"name": key, "text": v[key]}
+                return {"name": key, "text": v[key]};
             }))
         });
     }, []);

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from "react";
 
 
 const JsonDictTwoSidedEdit = ({jsonDict, title, setDictFunc, arg1}) => {
@@ -11,8 +11,8 @@ const JsonDictTwoSidedEdit = ({jsonDict, title, setDictFunc, arg1}) => {
 
 
     return (
-        <div className='mb-10'>
-            <h1 className='text-2xl font-bold mb-4'>
+        <div className="mb-10">
+            <h1 className="text-2xl font-bold mb-4">
                 {title}
             </h1>
             <div className="block flex-wrap">

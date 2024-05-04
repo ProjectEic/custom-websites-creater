@@ -1,16 +1,14 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Landing from './landing_section';
-import {ref, get} from '../../firebase_emulator';
-var database = ""
+"use client";
+import React, { useState, useEffect } from "react";
+import Landing from "./landing_section";
+import {ref, get} from "../../firebase_emulator";
 
-function getLandingDB() {
+var database = "";
+
+const getLandingDB = () => {
     const dbRef = ref(database, "/landing");
-    return get(dbRef)
+    return get(dbRef);
 }
-
-
-
 
 const LocalLanding = () => {;
     const [props, setLanding] = useState({});
@@ -22,7 +20,6 @@ const LocalLanding = () => {;
             setLanding(v)
         });
     }, []);
-
   
   return (
     <Landing 

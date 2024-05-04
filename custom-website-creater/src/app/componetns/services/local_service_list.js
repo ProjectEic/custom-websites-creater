@@ -1,17 +1,14 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import ServiceList from './services_list';
-import {ref, get} from '../../firebase_emulator';
-var database = ""
+"use client";
+import React, { useState, useEffect } from "react";
+import ServiceList from "./services_list";
+import {ref, get} from "../../firebase_emulator";
 
+var database = "";
 
-function getServicesDB() {
+const getServicesDB = () => {
     const dbRef = ref(database, "/services");
     return get(dbRef)
 }
-
-
-
 
 const FirebaseServiceList = () => {;
     const [services, setServices] = useState([]);

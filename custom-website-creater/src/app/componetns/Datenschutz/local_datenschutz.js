@@ -1,16 +1,14 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Datenschutzerklaerung from './Datenschutzerklaerung';
-import {ref, get} from '../../firebase_emulator';
+"use client";
+import React, { useState, useEffect } from "react";
+import Datenschutzerklaerung from "./Datenschutzerklaerung";
+import {ref, get} from "../../firebase_emulator";
+
 var database = ""
 
-function getFooterDB() {
+const getFooterDB = () => {
     const dbRef = ref(database, "/company_info");
     return get(dbRef)
 }
-
-
-
 
 const LocalDatenschutz = () => {;
     const [datenschutz, setFooter] = useState({});

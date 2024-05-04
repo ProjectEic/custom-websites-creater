@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { BsArrowLeft, BsArrowRight, BsX } from 'react-icons/bs';
-import { motion, useAnimation } from 'framer-motion';
-import ImageItem from './img_item';
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { BsArrowLeft, BsArrowRight, BsX } from "react-icons/bs";
+import { motion, useAnimation } from "framer-motion";
+import ImageItem from "./img_item";
 
-{/* KINDER DIE SPAß haben ist gehardcoded */}
-{/* TODO: REMOVE HARDCODING - KOMMT ZWEI MAL VOR ACHTUNG !!!!!!*/}
 const Gallery = (props) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -52,10 +50,9 @@ const Gallery = (props) => {
     setSwipeDirection("150vw");
   };
 
-
   return (
     <section id="Gallery" className="p-6">
-      <h2 className="headlineConfig">Gallery</h2>
+      <h2 className="headlineConfig">Gallerie</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {loadedImages.map((image, index) => (
           <ImageItem key={index} image={image} index={index} openLightbox={openLightbox} text={props.text?props.text[index]:""}/>
@@ -109,9 +106,7 @@ const Gallery = (props) => {
                   alt="Gallery Image"
                   className="w-full h-[80vh] object-contain rounded"
                 />
-                {/* KINDER DIE SPAß haben ist gehardcoded */}
-                {/* TODO: REMOVE HARDCODING */}
-                <span className="rounded-b-xl"> {props.text?props.text[index]:""} </span> 
+                <span className="rounded-b-xl"> {props.text?props.text[currentImage]:""} </span> 
               </motion.div>
               <motion.button
                 onClick={navigateNext}              

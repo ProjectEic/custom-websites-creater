@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Header = ({ elements }) => {
     const positionLastElement = elements.length - 1;
@@ -10,28 +10,28 @@ const Header = ({ elements }) => {
             setlastElementToCutIndex(window.innerWidth > 600 ? 0 : 1);
         };
 
-        if (typeof window !== 'undefined') {
+        if (typeof window !== "undefined") {
             window.addEventListener("resize", handleResize);
         }
 
         return () => {
-            if (typeof window !== 'undefined') {
+            if (typeof window !== "undefined") {
                 window.removeEventListener("resize", handleResize);
             }
         };
     }, []);
 
     const handleClickNavSlide = () => {
-        if (typeof document === 'undefined') return;
-        const listItems = document.querySelectorAll('.navSlide li');
+        if (typeof document === "undefined") return;
+        const listItems = document.querySelectorAll(".navSlide li");
         const navSlide = document.querySelector(".navSlide");
         navSlide?.classList.toggle("navSlideTranslate");
         
-        let navSlideList = Array.prototype.filter.call(listItems, f => !f.classList.contains('toggleDisplay'));  
+        let navSlideList = Array.prototype.filter.call(listItems, f => !f.classList.contains("toggleDisplay"));  
 
         navSlideList.forEach((link, index) => {
             if(link.style.animation){
-                link.style.animation = '';
+                link.style.animation = "";
             }else{
                 link.style.animation = `navLinksFade 500ms ease-out forwards ${index / 8 + 0.3}s`;
             }

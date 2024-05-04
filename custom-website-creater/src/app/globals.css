@@ -1,13 +1,13 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* create new CSS variable which are edited by or even added using the buildScript */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --background-landing: url('./icons/about.jpg');
+  --background-landing: url("./icons/about.jpg");
 
   /* 
     colors not properly defined yet => standard color schemes maybe to choose
@@ -130,7 +130,7 @@ section:nth-of-type(2n){
 }
 
 #Landing::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -191,8 +191,21 @@ section:nth-of-type(2n){
   transform: translateX(0%);
 }
 
+@media (max-width: 1600px) {
+  .singleServiceWrapper{
+    flex-wrap: wrap;
+    justify-content: start;
+  }
 
+  .singleServiceWrapper *{
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+  }
 
+  .singleServiceWrapper button{
+    margin-left: auto;
+  }
+}
 
 @media (max-width: 1000px) {
   .responsiveDesktopHeader {
@@ -236,6 +249,14 @@ section:nth-of-type(2n){
     font-size: 3rem;
   }
 
+  .singleServiceWrapper{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .singleServiceWrapper button{
+    margin-left: unset;
+  }
 }
 
 @media (max-width: 800px) {

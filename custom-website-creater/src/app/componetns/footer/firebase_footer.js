@@ -1,16 +1,13 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Footer from '../footer';
-import {auth, database} from '../../firebase_connecter';
-import {getDatabase, ref, get, child } from "firebase/database";
+"use client";
+import React, { useState, useEffect } from "react";
+import Footer from "../footer";
+import { database} from "../../firebase_connecter";
+import { ref, get } from "firebase/database";
 
-function getFooterDB() {
+const getFooterDB = () => {
     const dbRef = ref(database, "/footer");
     return get(dbRef)
 }
-
-
-
 
 const FirebaseFooter = () => {;
     const [footerData, setFooter] = useState({});
@@ -26,7 +23,7 @@ const FirebaseFooter = () => {;
   
   return (
     <Footer
-        links={Object.entries(footerData.links? footerData.links: {}).map((v, index) => {return {"name": v[0], "link": v[1]}})}
+        links={Object.entries(footerData.links? footerData.links: {}).map((v) => {return {"name": v[0], "link": v[1]}})}
         companySpecs={new Map(footerData.companySpecs? Object.entries(footerData.companySpecs): []) }
         logo={footerData.logo}
        />

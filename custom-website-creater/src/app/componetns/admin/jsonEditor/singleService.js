@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from 'react';
-import ImageSelector from './imageSelector';
+import React from "react";
+import ImageSelector from "./imageSelector";
 
 
-function addImgPropIfNecessary(jsonDict) {
+const addImgPropIfNecessary = (jsonDict) => {
     if (!jsonDict.hasOwnProperty("image")) {
         jsonDict["image"] = "default";
     }
@@ -14,7 +14,7 @@ function addImgPropIfNecessary(jsonDict) {
 const SingleService = ({jsonDict, onChange}) => {
     addImgPropIfNecessary(jsonDict)
     return (
-        <div className='flex px-10 justify-center align-center items-start'>
+        <div className="singleServiceWrapper flex px-10 justify-center align-center items-start">
             
             {Array.from(Object.keys(jsonDict)).map((key, index) => {
                 if (key == "image") { 
@@ -26,15 +26,15 @@ const SingleService = ({jsonDict, onChange}) => {
                 
                 }
                 return (
-                    <div key={index} className='block pl-5'>
+                    <div key={index} className="block pl-5">
                         <label className="block font-semibold mb-1">{key}:</label>
-
                         <input 
                             type="text" 
                             id={key} 
                             defaultValue={jsonDict[key]} 
                             onChange={(e) => { jsonDict[key] = e.target.value; onChange(jsonDict);}} 
-                            className="w-50 border border-gray-300 rounded px-4 py-2 text-gray-950 h-50" />
+                            className="w-50 border border-gray-300 rounded px-4 py-2 text-gray-950 h-50"
+                        />
                     </div>
                 )
             })}

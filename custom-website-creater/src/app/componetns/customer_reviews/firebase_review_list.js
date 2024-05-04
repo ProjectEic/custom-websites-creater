@@ -1,10 +1,10 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import ReviewList from './review_list';
-import {auth, database} from '../../firebase_connecter';
-import {getDatabase, ref, get, child } from "firebase/database";
+"use client";
+import React, { useState, useEffect } from "react";
+import ReviewList from "./review_list";
+import { database} from "../../firebase_connecter";
+import { ref, get } from "firebase/database";
 
-function getReviewsDB() {
+const getReviewsDB = () => {
     const dbRef = ref(database, "/reviews");
     return get(dbRef)
 }
