@@ -20,7 +20,7 @@ const FirebaseServiceList = () => {;
                     "name": key, 
                     "text": v[key]["text"],
                     "image": v[key]["image"],
-                    "hasImage": v[key]["image"] !== undefined,
+                    "hasImage": v[key]["image"] !== undefined && v[key]["image"] !== "" && v[key]["image"] != "Neues Bild",
                     "link": v[key]["link"],
                     "linkText": v[key]["linkText"]
                 }
