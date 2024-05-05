@@ -7,10 +7,10 @@ import Settings from "./website_settings.json";
 import Mapper from "./content_mapper"; 
 import Admin from "./componetns/admin/admin";
 import NotFound from "./404";
-
+import WebsiteData from "./website_data.json";
 const inter = Inter({ subsets: ["latin"] });
-const title = "My Website"; // TODO: make it DYNAMIC
-const metaData = ""; // TODO: make it DYNAMIC
+
+
 
 export default function RootLayout({ children }) {
   
@@ -24,8 +24,8 @@ export default function RootLayout({ children }) {
     <Router>
       <html>
         <head>
-          <title>{title}</title>
-          <meta name="description" content={metaData} />
+          <title>{WebsiteData["landing"]["headline"]}</title>
+          <meta name="description" content={WebsiteData["landing"]["aboutText"]} />
         </head>
         <body className={inter.className}>
           <Routes> 
