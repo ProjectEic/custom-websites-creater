@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import Image from 'next/image';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import React, { useRef } from "react";
+import Image from "next/image";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const ImageItem = ({ image, index, openLightbox, text }) => {
     const hoverImageShowText = useAnimation();
@@ -45,18 +45,18 @@ const ImageItem = ({ image, index, openLightbox, text }) => {
             whileTap={{ scale: 0.99 }}
         >
             <Image
-            width={500}
-            height={500}
-            src={image.default}
-            alt="Gallery Image"
-            className="w-full h-auto cursor-pointer transition-transform transform rounded-[7px] hover:rounded"
-            onClick={() => openLightbox(index)}
+                width={500}
+                height={500}
+                src={image.default}
+                alt="Gallery Image"
+                className="w-full h-auto cursor-pointer transition-transform transform rounded-[7px] hover:rounded"
+                onClick={() => openLightbox(index)}
             />
             <motion.span
-            className="rounded-b-xl relative p-0 bg-transparent text-transparent bottom-[1.4%] w-inherit"
-            initial={{ opacity: 0, display: "none" }}
-            animate={hoverImageShowText}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+                className="rounded-b-xl relative p-0 bg-transparent text-transparent bottom-[1.4%] w-inherit"
+                initial={{ opacity: 0, display: "none" }}
+                animate={hoverImageShowText}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
             >
             {text}
             </motion.span>

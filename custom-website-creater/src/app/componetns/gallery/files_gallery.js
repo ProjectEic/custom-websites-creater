@@ -1,9 +1,8 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Gallery from './gallery';
-//
+"use client";
+import React from "react";
+import Gallery from "./gallery";
 
-function importAll(r) {
+const importAll = (r) => {
   return r.keys().map((key) => ({
     path: key,
     default: r(key).default,

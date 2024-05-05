@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from "react";
 
 
 const JsonDictTwoSidedEdit = ({jsonDict, title, setDictFunc, arg1}) => {
@@ -11,13 +11,13 @@ const JsonDictTwoSidedEdit = ({jsonDict, title, setDictFunc, arg1}) => {
 
 
     return (
-        <div className='mb-10'>
-            <h1 className='text-2xl font-bold mb-4'>
+        <div className="mb-10">
+            <h1 className="text-2xl font-bold mb-4">
                 {title}
             </h1>
             <div className="block flex-wrap">
                 {Array.from(Object.keys(jsonDict)).map((key, index) => (
-                    <div key={key} className="flex items-center space-x-2">
+                    <div key={key} className="flex items-center space-x-2 mt-1 mb-1">
                         <input 
                             type="text" 
                             id={key} 
@@ -41,7 +41,7 @@ const JsonDictTwoSidedEdit = ({jsonDict, title, setDictFunc, arg1}) => {
 
                         <button 
                             onClick={() => { delete jsonDict[key];  setDictFunc(jsonDict, arg1)}} 
-                            className="mt-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
                                 -
                         </button>
                         

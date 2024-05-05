@@ -1,10 +1,10 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Datenschutzerklaerung from './Datenschutzerklaerung';
-import {auth, database} from '../../firebase_connecter';
-import {getDatabase, ref, get, child } from "firebase/database";
+"use client";
+import React, { useState, useEffect } from "react";
+import Datenschutzerklaerung from "./Datenschutzerklaerung";
+import { database} from "../../firebase_connecter";
+import { ref, get } from "firebase/database";
 
-function getFooterDB() {
+const getFooterDB = () =>{
     const dbRef = ref(database, "/company_info");
     return get(dbRef)
 }

@@ -1,16 +1,13 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Landing from './landing_section';
-import {auth, database} from '../../firebase_connecter';
-import {getDatabase, ref, get, child } from "firebase/database";
+"use client";
+import React, { useState, useEffect } from "react";
+import Landing from "./landing_section";
+import { database} from "../../firebase_connecter";
+import { ref, get } from "firebase/database";
 
-function getLandingDB() {
+const getLandingDB = () => {
     const dbRef = ref(database, "/landing");
-    return get(dbRef)
+    return get(dbRef);
 }
-
-
-
 
 const FirebaseLanding = () => {;
     const [props, setLanding] = useState({});
@@ -18,11 +15,10 @@ const FirebaseLanding = () => {;
     useEffect(() => { 
 
         getLandingDB().then((res) => {
-            const v = res.val();;
-            setLanding(v)
+            const v = res.val();
+            setLanding(v);
         });
     }, []);
-
   
   return (
     <Landing 

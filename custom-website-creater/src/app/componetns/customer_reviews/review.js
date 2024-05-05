@@ -1,7 +1,7 @@
 "use-client"
-import React, { useState, useRef } from 'react';
-import Image from 'next/image';
-import { BsX } from 'react-icons/bs';
+import React, { useState, useRef } from "react";
+import Image from "next/image";
+import { BsX } from "react-icons/bs";
 import { motion, useInView } from "framer-motion";
 
 
@@ -28,8 +28,8 @@ const Review = (review) => {
                 className="object-contain border border-white rounded"
               />;
     }
-    const reviewName = review.name.length > 50 ? review.name.slice(0, 50) + '...' : review.name;
-    const reviewText = review.text.length > 150 ? review.text.slice(0, 150) + '...' : review.text;
+    const reviewName = review.name.length > 50 ? review.name.slice(0, 50) + "..." : review.name;
+    const reviewText = review.text.length > 150 ? review.text.slice(0, 150) + "..." : review.text;
 
     const reviewRef = useRef(null);
     const isInView = useInView(reviewRef, { once: true });

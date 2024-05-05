@@ -5,9 +5,6 @@ import Mapper from "./content_mapper";
 
 
 export default function Home() {
-  // const json = new JsonFormatter("");
-
-
   return (
     <div className="contentWrapper">
       <Header 
@@ -23,19 +20,6 @@ export default function Home() {
           Mapper[Settings["mode"]][content]
         ))
       }
-      {/* <FirebaseLanding/>
-
-
-      <FirebaseServiceList/>
-
-
-      <FirebaseGallery/>
-
-      
-      <LocalReviewList/>
-
-      <FirebaseFooter/> */}
-
 
     </div>
   );

@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import {auth, database, is_logged_in} from '../../firebase_connecter';
-import { getDatabase, ref, get, child, set } from "firebase/database";
-import AdminLogin from './adminLogin';
-import iconMapper from '../iconMapper';
-import JsonDictOneSidedEdit from './jsonEditor/jsonDictOneSidedEdit';
-import JsonDictTwoSidedEdit from './jsonEditor/jsonDictTwoSidedEdit';
-import JsonDictTwoSidedEditChosen from './jsonEditor/jsonDictTwoSidedEditChosen';
-import ServicesEdit from './jsonEditor/servicesEdit';
-import DynamicGallery from './jsonEditor/dynamic_gallery';
+import React, { useState, useEffect } from "react";
+import {database, is_logged_in} from "../../firebase_connecter";
+import {ref, get, set } from "firebase/database";
+import AdminLogin from "./adminLogin";
+import iconMapper from "../iconMapper";
+import JsonDictOneSidedEdit from "./jsonEditor/jsonDictOneSidedEdit";
+import JsonDictTwoSidedEdit from "./jsonEditor/jsonDictTwoSidedEdit";
+import JsonDictTwoSidedEditChosen from "./jsonEditor/jsonDictTwoSidedEditChosen";
+import ServicesEdit from "./jsonEditor/servicesEdit";
+import DynamicGallery from "./jsonEditor/dynamic_gallery";
 
 
-function getDB() {
+const getDB = () => {
     const dbRef = ref(database, "/");
     return get(dbRef)
 }
@@ -29,12 +28,12 @@ const Admin = () => {
             const v = res.val();
             setCurrentJson(v)
         });
-    }, [is_logged_in]);
+    }, []);
 
     // update if user is logged in
     useEffect(() => {
         setIsLoggedIn(is_logged_in);
-    }, [is_logged_in]);
+    }, []);
 
 
     const handleSubmit = (e) => {
@@ -45,7 +44,7 @@ const Admin = () => {
         set(dbRef, js12);
     };
 
-    function deepCpy(obj) {
+    const deepCpy = (obj) => {
         var nowObj = {};
         for (var k of Array.from(Object.keys(obj))) {
             if (k=="") { continue; }
@@ -60,7 +59,7 @@ const Admin = () => {
         return nowObj;
     }
 
-    function setDictFunc(dict, arg1) {
+    const setDictFunc = (dict, arg1) => {
         var newDict = currentJson;
         for (var k of arg1) {
             newDict = newDict[k];
@@ -122,14 +121,14 @@ const Admin = () => {
                 />
 
 
-                <div className='h-5'>
+                <div className="h-5">
 
                 </div>
 
 
                 <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-10">Speichern</button>
 
-                <button type="button" className='bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600' 
+                <button type="button" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" 
                     onClick={() => {
                         window.location.href = "/";
                     }}

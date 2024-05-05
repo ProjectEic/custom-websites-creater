@@ -1,22 +1,18 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import ServiceList from './services_list';
-import {auth, database} from '../../firebase_connecter';
-import {getDatabase, ref, get, child } from "firebase/database";
+"use client";
+import React, { useState, useEffect } from "react";
+import ServiceList from "./services_list";
+import { database} from "../../firebase_connecter";
+import { ref, get } from "firebase/database";
 
-function getServicesDB() {
+const getServicesDB = () => {
     const dbRef = ref(database, "/services");
     return get(dbRef)
 }
-
-
-
 
 const FirebaseServiceList = () => {;
     const [services, setServices] = useState([]);
 
     useEffect(() => { 
-
         getServicesDB().then((res) => {
             const v = res.val();
             setServices(Object.keys(v).map((key) => {
@@ -32,7 +28,6 @@ const FirebaseServiceList = () => {;
         });
     }, []);
 
-  
   return (
     <ServiceList 
       services={services}
