@@ -1,15 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import SingleService from "./singleService";
 
 
 const ServicesEdit = ({jsonDict, title, setDictFunc, arg1}) => {
-
-    useEffect(() => {
-        console.log(jsonDict)
-    }
-    , [jsonDict])
-
 
     return (
         <div className="mb-10 mt-2 mt-1 mb-1">
