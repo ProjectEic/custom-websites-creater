@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import {database, is_logged_in} from "../../firebase_connecter";
 import {ref, get, set } from "firebase/database";
