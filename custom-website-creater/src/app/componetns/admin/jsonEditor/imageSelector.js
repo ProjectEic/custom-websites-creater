@@ -14,7 +14,7 @@ const ImageSelector = ({defaultVal, onChange}) => {
     }, []);
 
     return (
-        <div>
+        <div className="block pl-5">
             
             <label className="block font-semibold mb-1">image:</label>
             <Select

@@ -19,6 +19,7 @@ const SingleService = ({jsonDict, onChange}) => {
             {Array.from(Object.keys(jsonDict)).map((key, index) => {
                 if (key == "image") { 
                     return <ImageSelector 
+                        className="block pl-5"
                         key={`ImageSelector${index}`}	
                         onChange= { (newVal) => { jsonDict[key] = newVal; onChange(jsonDict); }}
                         defaultVal={jsonDict[key]}
@@ -41,7 +42,7 @@ const SingleService = ({jsonDict, onChange}) => {
 
                 <button 
                         onClick={() => { onChange(undefined)}} 
-                        className="mt-7 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 h-10 ml-2">
+                        className="mt-7 bg-red-500 text-white ml-5 px-4 py-2 rounded hover:bg-red-600 h-10 ml-2">
                             -
                 </button>
 

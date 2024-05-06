@@ -40,8 +40,7 @@ const ServicesEdit = ({jsonDict, title, setDictFunc, arg1}) => {
                 ))}
 
             </div>
-
-            {/* Add Button */}
+            
             <button 
                 onClick={() => {  jsonDict["Neuer Service"] = {
                     link: "Neuer Link",
