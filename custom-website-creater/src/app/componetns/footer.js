@@ -94,7 +94,6 @@ const Footer = ({ links, companySpecs, logo }) => {
           transition={transitionAnimation}
           className="mb-4 md:mb-0 mr-4 flex flex-col"
         > 
-          <Image src={logo} alt="Logo" className="w-32 h-auto" />
           <Link className="hoverUnderlineEffect text-gray-300 py-2 font-normal hover:text-white w-fit text-[1.125rem]" href="/Impressum">
             Impressum
           </Link>
