@@ -1,5 +1,5 @@
 import {app} from "./firebase_config";
-import { getStorage, ref, listAll, getDownloadURL, deleteObject, uploadBytes} from "firebase/storage";
+import { getStorage, ref, listAll, getDownloadURL, deleteObject, uploadBytes } from "firebase/storage";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
@@ -11,7 +11,7 @@ const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
 }
 
-var is_logged_in = true;
+var is_logged_in = false;
 
 onAuthStateChanged(auth, (user) => {
     if (user) {

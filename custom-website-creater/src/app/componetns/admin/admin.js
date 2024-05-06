@@ -33,7 +33,7 @@ const Admin = () => {
     // update if user is logged in
     useEffect(() => {
         setIsLoggedIn(is_logged_in);
-    }, []);
+    }, [is_logged_in]);
 
 
     const handleSubmit = (e) => {
