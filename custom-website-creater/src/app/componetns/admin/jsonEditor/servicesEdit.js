@@ -46,7 +46,7 @@ const ServicesEdit = ({jsonDict, title, setDictFunc, arg1}) => {
                     link: "Neuer Link",
                     linkText: "Neuer Link Text",
                     text: "Neuer Text",
-                    image: "Neues Bild"
+                    image: "Kein Bild"
                 }; setDictFunc(jsonDict, arg1)} } 
                 className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                     +

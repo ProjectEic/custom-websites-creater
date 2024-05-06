@@ -8,6 +8,7 @@ const ImageSelector = ({defaultVal, onChange}) => {
 
     useEffect(() => {
         getFileListLinks().then((res) => {
+            res.push("Kein Bild")
             setLoadedImages(res.map((url) => ({ value: url, label: url }))
             );
         });
@@ -23,7 +24,7 @@ const ImageSelector = ({defaultVal, onChange}) => {
                 formatOptionLabel={img => (
                     <div className="img-option flex">
                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={img.value} alt="img-image" className="h-[100px]"/>
+                        <img src={img.value} alt="" className="h-[100px]"/>
                         <span className="text-black">{img.value.split("/").at(-1).split(".")[0] }</span>
                     </div>
                 )}
