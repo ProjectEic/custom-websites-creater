@@ -1,4 +1,4 @@
-
+"use client";
 import Header from "./componetns/header";
 import Settings from "./website_settings.json";
 import Mapper from "./content_mapper"; 
