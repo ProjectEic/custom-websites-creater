@@ -1,18 +1,19 @@
-import FirebaseLanding from "./componetns/landing_section/firebase_landing";
-import FirebaseFooter from "./componetns/footer/firebase_footer";
-import FirebaseServiceList from "./componetns/services/firebase_service_list";
-import FirebaseGallery from "./componetns/gallery/firebase_gallery";
-import FirebaseReviewList from "./componetns/customer_reviews/firebase_review_list";
-import FirebaseDatenschutz from "./componetns/Datenschutz/firebase_datenschutz";
-import FirebaseImpressum from "./componetns/Impressum/firebase_impressum";
+"use client";
+import FirebaseLanding from "./components/landing_section/firebase_landing";
+import FirebaseFooter from "./components/footer/firebase_footer";
+import FirebaseServiceList from "./components/services/firebase_service_list";
+import FirebaseGallery from "./components/gallery/firebase_gallery";
+import FirebaseReviewList from "./components/customer_reviews/firebase_review_list";
+import FirebaseDatenschutz from "./Datenschutz/f/page";
+import FirebaseImpressum from "./Impressum/f/page";
 
-import LocalLanding from "./componetns/landing_section/local_landing";
-import LocalFooter from "./componetns/footer/local_footer";
-import LocalServiceList from "./componetns/services/local_service_list";
-import FileGallery from "./componetns/gallery/files_gallery";
-import LocalReviewList from "./componetns/customer_reviews/local_review_list";
-import LocalDatenschutz from "./componetns/Datenschutz/local_datenschutz";
-import LocalImpressum from "./componetns/Impressum/local_impressum";
+import LocalLanding from "./components/landing_section/local_landing";
+import LocalFooter from "./components/footer/local_footer";
+import LocalServiceList from "./components/services/local_service_list";
+import FileGallery from "./components/gallery/files_gallery";
+import LocalReviewList from "./components/customer_reviews/local_review_list";
+import LocalDatenschutz from "./Datenschutz/l/page";
+import LocalImpressum from "./Impressum/l/page";
 
 const contentMap = {
 

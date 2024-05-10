@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { getFileListLinks, uploadFile, deleteFile}  from "../../../firebase_connecter";
+import { getFileListLinks, uploadFile, deleteFile}  from "../../firebase_connecter";
 import Image from "next/image";
 
 const DynamicGallery = ({title}) => {

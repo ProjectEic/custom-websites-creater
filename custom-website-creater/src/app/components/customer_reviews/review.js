@@ -81,7 +81,7 @@ const Review = (review) => {
                             whileTap={{ scale: 0.95 }}
                             whileHover={{ scale: 1.05 }}
                             onClick={toggleLightbox}
-                            className="absolute top-[12%] right-[12%] text-white text-5xl cursor-pointer hover:text-gray-300 transition-colors"
+                            className="absolute top-2 right-2 text-white text-5xl cursor-pointer hover:text-gray-300 transition-colors"
                         >
                             <BsX/>
                         </motion.button>

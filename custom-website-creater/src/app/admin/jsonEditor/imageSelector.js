@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { getFileListLinks}  from "../../../firebase_connecter";
+import { getFileListLinks}  from "../../firebase_connecter";
 import Select from "react-select"
 
 const ImageSelector = ({defaultVal, onChange}) => {

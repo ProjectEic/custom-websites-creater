@@ -1,17 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Datenschutzerklaerung from "./Datenschutzerklaerung";
-import {ref, get} from "../../firebase_emulator";
-
-var database = ""
+import Impressum from "../Impressum";
+import { database} from "../../firebase_connecter";
+import { ref, get } from "firebase/database";
 
 const getFooterDB = () => {
     const dbRef = ref(database, "/company_info");
     return get(dbRef)
 }
 
-const LocalDatenschutz = () => {;
-    const [datenschutz, setFooter] = useState({});
+const FirebaseImpressum = () => {;
+    const [impressum, setFooter] = useState({});
 
     useEffect(() => { 
 
@@ -20,14 +19,13 @@ const LocalDatenschutz = () => {;
             setFooter(v)
         });
     }, []);
-
   
   return (
-    <Datenschutzerklaerung 
-      datenschutz={datenschutz}
+    <Impressum 
+      impressum={impressum}
     />
   );
     
 };
 
-export default LocalDatenschutz;
+export default FirebaseImpressum;

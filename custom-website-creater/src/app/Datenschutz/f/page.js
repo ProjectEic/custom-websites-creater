@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Datenschutzerklaerung from "./Datenschutzerklaerung";
+import Datenschutzerklaerung from "../Datenschutzerklaerung";
 import { database} from "../../firebase_connecter";
 import { ref, get } from "firebase/database";
 

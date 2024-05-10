@@ -1,7 +1,10 @@
 "use client";
 import React from "react";
+import Settings from "../website_settings.json";
 
 const Impressum = ({impressum}) => {
+  const DatenschutzUrl = Settings["mode"] == "firebase" ? "/Datenschutz/f" : "/Datenschutz/l";
+  
   return (
     <div className="Impressum p-8">
       <h1 className="text-center text-2xl mb-10">Impressum</h1>
@@ -27,7 +30,7 @@ const Impressum = ({impressum}) => {
       <p className="mb-2">Soweit nicht anders angegeben, liegen alle Rechte beim Verantwortlichen der Website. Die Verlinkung und die Verbreitung der Inhalte sind möglich, soweit nicht Rechte Dritter berührt werden bzw. eine Einzelfallregelung vorliegt. Im Falle der Verlinkung und der Verbreitung muss als Quelle der Name und die Internetadresse der Schule angegeben werden.</p>
 
       <p className="mb-2"><b>Datenschutzerklärung:</b></p>
-      <p className="mb-2">Unsere Datenschutzerklärung finden Sie <a className="underline hover:text-gray-400 cursor-pointe" href="/Datenschutz">hier</a>.</p>
+      <p className="mb-2">Unsere Datenschutzerklärung finden Sie <a className="underline hover:text-gray-400 cursor-pointe" href={DatenschutzUrl}>hier</a>.</p>
 
       <p className="mt-10 hover:text-gray-400 hover:underline cursor-pointer"><a href="/">Back to the Homepage</a></p>
     </div>

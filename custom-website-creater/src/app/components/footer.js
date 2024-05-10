@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import iconMapper from "./iconMapper";
+import Settings from "../website_settings.json";
 
 /**
  * 
@@ -12,7 +13,10 @@ import iconMapper from "./iconMapper";
  * @param {String} logo
  * @returns 
  */
-const Footer = ({ links, companySpecs, logo }) => {
+const Footer = ({ links, companySpecs }) => {
+  const impressumLink = Settings["mode"] == "firebase" ? "/Impressum/f" : "/Impressum/l";
+  const datenschutzLink =Settings["mode"] == "firebase" ? "/Datenschutz/f"  : "/Datenschutz/l";
+  console.log(Settings["mode"])
   
   const footerInfosRef = useRef(null);
   const footerLinksRef = useRef(null);
@@ -82,7 +86,7 @@ const Footer = ({ links, companySpecs, logo }) => {
                
                   <Image src={iconMapper[link.name.toLowerCase()]} alt={`${link.name}-icon`} className="mr-2 mt-1 h-fit" width={20} height={20} />
                 
-                <span class="hoverUnderlineEffect">{link.name}</span>
+                <span className="hoverUnderlineEffect">{link.name}</span>
               </a>
             </li>
           ))}
@@ -94,12 +98,12 @@ const Footer = ({ links, companySpecs, logo }) => {
           transition={transitionAnimation}
           className="mb-4 md:mb-0 mr-4 flex flex-col"
         > 
-          <Link className="hoverUnderlineEffect text-gray-300 py-2 font-normal hover:text-white w-fit text-[1.125rem]" href="/Impressum">
+          <Link className="hoverUnderlineEffect text-gray-300 py-2 font-normal hover:text-white w-fit text-[1.125rem]" href={impressumLink}>
             Impressum
           </Link>
-          <Link className="hoverUnderlineEffect text-gray-300 py-2 font-normal hover:text-white w-fit text-[1.125rem]" href="/Datenschutz">
+          <Link className="hoverUnderlineEffect text-gray-300 py-2 font-normal hover:text-white w-fit text-[1.125rem]" href={datenschutzLink}>
             Datenschutzerklärung
-          </Link>
+          </Link> 
         </motion.div>
     </footer>
   );

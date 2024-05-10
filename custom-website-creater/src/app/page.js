@@ -1,10 +1,9 @@
 "use client";
-import Header from "./componetns/header";
+import Header from "./components/header";
 import Settings from "./website_settings.json";
 import Mapper from "./content_mapper"; 
 
-
-export default function Home() {
+const Home = () => {
   return (
     <div className="contentWrapper">
       <Header 
@@ -24,3 +23,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

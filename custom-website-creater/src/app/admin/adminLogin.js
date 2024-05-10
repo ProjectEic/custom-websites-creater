@@ -1,5 +1,5 @@
 import React from "react";
-import {login} from "../../firebase_connecter";
+import {login} from "../firebase_connecter";
 
 
 
