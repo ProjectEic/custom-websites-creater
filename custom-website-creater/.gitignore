@@ -37,7 +37,3 @@ next-env.d.ts
 
 src/app/website_data.json
 src/app/website_settings.json
-src/app/components/gallery/img
-src/app/components/gallery/img/*
-/src/app/components/gallery/img
-/src/app/components/gallery/img/*
