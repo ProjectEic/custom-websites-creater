@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Settings from "../website_settings.json";
+import Link from "next/link";
 
 const Impressum = ({impressum}) => {
   const DatenschutzUrl = Settings["mode"] == "firebase" ? "/Datenschutz/f" : "/Datenschutz/l";
@@ -32,7 +33,7 @@ const Impressum = ({impressum}) => {
       <p className="mb-2"><b>Datenschutzerklärung:</b></p>
       <p className="mb-2">Unsere Datenschutzerklärung finden Sie <a className="underline hover:text-gray-400 cursor-pointe" href={DatenschutzUrl}>hier</a>.</p>
 
-      <p className="mt-10 hover:text-gray-400 hover:underline cursor-pointer"><a href="/">Back to the Homepage</a></p>
+      <p className="mt-10 hover:text-gray-400 hover:underline cursor-pointer"><Link href="/">Back to the Homepage</Link></p>
     </div>
   );
 }
