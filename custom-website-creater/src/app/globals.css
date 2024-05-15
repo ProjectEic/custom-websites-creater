@@ -224,11 +224,11 @@ section:nth-of-type(2n){
     display: flex;
   }
 
-  #contactFooter{
+  #Contact{
     grid-template-columns: auto 1fr 1fr;
   }
 
-  #contactFooter div, ul{
+  #Contact div, ul{
     border: none;
   }
 
@@ -260,7 +260,7 @@ section:nth-of-type(2n){
 }
 
 @media (max-width: 800px) {
-  #contactFooter{
+  #Contact{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }

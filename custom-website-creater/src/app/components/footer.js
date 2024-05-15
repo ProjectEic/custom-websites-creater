@@ -14,8 +14,8 @@ import Settings from "../website_settings.json";
  * @returns 
  */
 const Footer = ({ links, companySpecs }) => {
-  const impressumLink = Settings["mode"] == "firebase" ? "/Impressum/f" : "/Impressum/l";
-  const datenschutzLink =Settings["mode"] == "firebase" ? "/Datenschutz/f"  : "/Datenschutz/l";
+  const impressumLink = Settings["mode"] == "firebase" ? "/Impressum/f.html" : "/Impressum/l.html";
+  const datenschutzLink =Settings["mode"] == "firebase" ? "/Datenschutz/f.html"  : "/Datenschutz/l.html";
   console.log(Settings["mode"])
   
   const footerInfosRef = useRef(null);
@@ -67,7 +67,7 @@ const Footer = ({ links, companySpecs }) => {
   };
   
   return (
-    <footer id="contactFooter" className="bg-gray-800 text-white py-8 px-4 md:px-8 grid grid-cols-3 w-full justify-between items-stretch gap-4 mx-0">
+    <footer id="Contact" className="bg-gray-800 text-white py-8 px-4 md:px-8 grid grid-cols-3 w-full justify-between items-stretch gap-4 mx-0">
         {footerCompanySpecifics()}
         <motion.ul 
           ref={footerLinksRef}
