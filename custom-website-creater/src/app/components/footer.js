@@ -45,13 +45,13 @@ const Footer = ({ links, companySpecs }) => {
           {Array.from(companySpecs.keys()).map((key, index) => (
             <p key={index} className="text-gray-300 py-2 text-lg font-normal">
               {key === "Email" ? (
-                  <a href={`mailto:${companySpecs.get(key)}`} className="">
+                  <Link href={`mailto:${companySpecs.get(key)}`} className="">
                     {key}:&nbsp;<span className="font-semibold underline hover:text-white">{companySpecs.get(key)}</span>
-                  </a>
+                  </Link>
               ) : key === "Phone" ? (
-                  <a href={`tel:${companySpecs.get(key)}`} className="">
+                  <Link href={`tel:${companySpecs.get(key)}`} className="">
                       {key}:&nbsp;<span className="font-semibold underline hover:text-white">{companySpecs.get(key)}</span>
-                  </a>
+                  </Link>
               ) : (
                   <>
                       {key}:&nbsp;
@@ -82,12 +82,12 @@ const Footer = ({ links, companySpecs }) => {
           
           {(links?links:[]).map((link, index) => (
             <li key={index} className="mb-2 md:mb-0 mr-4 flex items-center pt-4">
-              <a className="text-gray-300 transition duration-300 flex gap-5 text-lg font-normal hover:text-white" href={link.link}>
+              <Link className="text-gray-300 transition duration-300 flex gap-5 text-lg font-normal hover:text-white" href={link.link}>
                
                   <Image src={iconMapper[link.name.toLowerCase()]} alt={`${link.name}-icon`} className="mr-2 mt-1 h-fit" width={20} height={20} />
                 
                 <span className="hoverUnderlineEffect">{link.name}</span>
-              </a>
+              </Link>
             </li>
           ))}
         </motion.ul>
