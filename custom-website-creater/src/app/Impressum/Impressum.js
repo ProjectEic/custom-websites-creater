@@ -4,7 +4,7 @@ import Settings from "../website_settings.json";
 import Link from "next/link";
 
 const Impressum = ({impressum}) => {
-  const DatenschutzUrl = Settings["mode"] == "firebase" ? "/Datenschutz/f" : "/Datenschutz/l";
+  const DatenschutzUrl = Settings["mode"] == "firebase" ? "/Datenschutz/f.html" : "/Datenschutz/l.html";
   
   return (
     <div className="Impressum p-8">
