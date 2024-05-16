@@ -1,5 +1,5 @@
 {
-    "mode": "firebase",
+    "mode": "local",
     "contents": [
         "landing",
         "services",

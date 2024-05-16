@@ -28,7 +28,8 @@
     "TestService": {
       "link": "#Kontakt",
       "linkText": "Kontakt",
-      "text": "Das ist ein Service in Firebase"
+      "text": "Das ist ein Service in Firebase",
+      "image": "cap.jpg"
     }
   }
 }
