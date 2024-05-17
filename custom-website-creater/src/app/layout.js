@@ -8,10 +8,27 @@ import WebsiteData from "./website_data.json";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
-  
+
+  const filetypes = ["jpg", "png", "jpeg", "gif", "heic", "heif", "webp"];
+  let aboutImage = "";
+  filetypes.forEach((filetype) => {
+    // check if file exists in folder
+    try {
+      require(`./icons/about.${filetype}`);
+
+    } catch (error) {
+      return;
+    }
+    aboutImage = `./icons/about.${filetype}`;    
+  });
+
   useEffect(() => {
     for (let key in Settings["colors"]) {
       document.documentElement.style.setProperty(`${key}`, Settings["colors"][key]);
+    }
+    // find which about.{jpg, png, jpeg, gif, heic, heif, webp} is in icons folder
+    if (aboutImage) {
+      document.documentElement.style.setProperty("background-landing", `url(/icons/${aboutImage})`);
     }
   }, []);
 
