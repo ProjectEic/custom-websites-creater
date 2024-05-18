@@ -55,7 +55,7 @@ const Review = (review) => {
         >
             {review.hasIcon === true ? handleShowIcon() : <div className=""/>}
             <h3 className="font-semibold text-3xl pr-4 text-[var(--surface-color)]"> {reviewName} </h3>
-            <p className="text-gray-500 py-2 text-lg font-normal leading-tight"> {reviewText} </p>
+            <p className="text-[var(--second-color)] py-2 text-lg font-normal leading-tight"> {reviewText} </p>
             {lightboxOpen && (
                 <motion.div 
                     initial="hidden"
@@ -76,12 +76,12 @@ const Review = (review) => {
                     >
                         {review.hasIcon ? handleShowIcon(review.name) : <div className=""></div>}    
                         <h3 className="font-semibold text-3xl pr-4 text-center text-[var(--onSurface-color)]"> {review.name} </h3>
-                        <p className="text-gray-300 py-2 text-lg font-normal"> {review.text} </p>
+                        <p className="text-[var(--second-color)] py-2 text-lg font-normal"> {review.text} </p>
                         <motion.button
                             whileTap={{ scale: 0.95 }}
                             whileHover={{ scale: 1.05 }}
                             onClick={toggleLightbox}
-                            className="absolute top-2 right-2 text-white text-5xl cursor-pointer hover:text-gray-300 transition-colors"
+                            className="absolute top-2 right-2 text-white text-5xl cursor-pointer hover:text-[var(--second-color)] transition-colors"
                         >
                             <BsX/>
                         </motion.button>
