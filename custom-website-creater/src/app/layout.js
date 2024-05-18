@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
 
-  const filetypes = ["jpg", "png", "jpeg", "gif", "heic", "heif", "webp"];
+  const filetypes = ["png", "jpeg", "gif", "heic", "heif", "webp", "jpg"];
   let aboutImage = "";
   filetypes.forEach((filetype) => {
     // check if file exists in folder
