@@ -26,6 +26,7 @@
   /* main focus on websit => can be removed here (to make it thiccc again) XD */
   scrollbar-width: thin;
   scroll-behavior: smooth;
+  scroll-padding-top: 8vh;
 }
 
 @media (prefers-color-scheme: dark) {
