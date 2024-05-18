@@ -7,6 +7,7 @@ import pinterest from "../icons/pinterest.png";
 import whatsapp from "../icons/whatsapp.png";
 import fiverr from "../icons/fiverr.png";
 import github from "../icons/github.png";
+import tiktok from "../icons/tiktok.png";
 
 const iconMapper = {
     instagram,
@@ -18,6 +19,7 @@ const iconMapper = {
     whatsapp,
     fiverr,
     github,
+    tiktok
 };
 
 export default iconMapper;
