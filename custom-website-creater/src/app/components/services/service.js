@@ -53,10 +53,10 @@ const Service = (service) => {
             initial={isInView ? animateAnimation : initialAnimation}
             animate={isInView ? animateAnimation : initialAnimation}
             transition={transitionAnimation}      
-            whileHover={!lightboxOpen ? { backgroundColor: "var(--main-color)", color: "var(--third-color)", scale: 1.025 } : {}}
+            whileHover={!lightboxOpen ? { backgroundColor: "var(--main-color)", color: "var( --onthird-color)", scale: 1.025 } : {}}
             whileTap={!lightboxOpen ? { scale: .95 } : {}}
             ref={serviceRef}
-            className="servicePreviewBox p-4 min-h-40vh w-[24vw] bg-[var(--third-color)] rounded-2xl text-[var(--main-color)]" 
+            className="servicePreviewBox p-4 min-h-40vh w-[24vw] bg-[var(--onthird-color)] rounded-2xl text-[var(--main-color)]" 
             onClick={(e) => toggleLightbox(e)}
         >
             <h3 className="font-semibold text-3xl pr-4">{serviceName}</h3>
