@@ -106,7 +106,7 @@ const Gallery = (props) => {
                   alt="Gallery Image"
                   className="w-full h-[80vh] object-contain rounded"
                 />
-                <span className="rounded-b-xl"> {props.text?props.text[currentImage]:""} </span> 
+                <p className="rounded-b-xl word-break" > {props.text?props.text[currentImage]:""} </p> 
               </motion.div>
               <motion.button
                 onClick={navigateNext}              

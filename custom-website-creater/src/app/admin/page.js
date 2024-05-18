@@ -128,10 +128,15 @@ const Admin = () => {
                 </div>
 
 
-                <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-10">Speichern</button>
+                <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-10"
+                    onClick={() => {
+                            window.alert("Gespeichert");
+                        }}
+                >Speichern</button>
 
                 <button type="button" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" 
                     onClick={() => {
+                        window.alert("Gespeichert");
                         window.location.href = "/";
                     }}
                 >

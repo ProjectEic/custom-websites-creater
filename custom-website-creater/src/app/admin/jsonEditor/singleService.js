@@ -29,7 +29,7 @@ const SingleService = ({jsonDict, onChange}) => {
                 return (
                     <div key={index} className="block pl-5">
                         <label className="block font-semibold mb-1">{key}:</label>
-                        <input 
+                        <textarea 
                             type="text" 
                             id={key} 
                             defaultValue={jsonDict[key]} 

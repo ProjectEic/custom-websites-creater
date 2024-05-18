@@ -39,7 +39,7 @@ const Footer = ({ links, companySpecs }) => {
         className="mb-4 md:mb-0 flex items-stretch"
       > 
         <div className="flex-grow border-r pr-4"> 
-          <h3 className="font-semibold text-3xl pr-4 text-white">
+          <h3 className="headline-footer font-semibold text-3xl pr-4 text-white">
             Infos:
           </h3>
           {Array.from(companySpecs.keys()).map((key, index) => (
@@ -76,7 +76,7 @@ const Footer = ({ links, companySpecs }) => {
           transition={transitionAnimation}
           className="flex-col md:flex-row flex-wrap items-center border-r pr-4"
         >
-          <h3 className="font-semibold text-3xl">
+          <h3 className="headline-footer font-semibold text-3xl">
             Links:
           </h3>
           

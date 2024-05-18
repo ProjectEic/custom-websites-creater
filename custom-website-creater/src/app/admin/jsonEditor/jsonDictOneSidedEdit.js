@@ -14,7 +14,7 @@ const JsonDictOneSidedEdit = ({jsonDict, title}) => {
                 <div key={index}>
                     <label key={index} className="block font-semibold mb-1">{key}:</label>
 
-                    <input 
+                    <textarea 
                         type="text" 
                         id={key} 
                         defaultValue={jsonDict[key]} 

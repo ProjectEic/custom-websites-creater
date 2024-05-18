@@ -22,10 +22,10 @@ const ImageSelector = ({defaultVal, onChange}) => {
                 value={{value: defaultVal, label: defaultVal.split("/").at(-1).split(".")[0]}}
                 options={loadedImages}
                 formatOptionLabel={img => (
-                    <div className="img-option flex">
+                    <div className="img-option flex flex-wrap">
                          {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={img.value} alt="" className="h-[100px]"/>
-                        <span className="text-black">{img.value.split("/").at(-1).split(".")[0] }</span>
+                        <span className="text-black word-break">{img.value.split("/").at(-1).split(".")[0] }</span>
                     </div>
                 )}
                 className="w-80 border border-gray-300 rounded px-4 py-2 text-gray-950"

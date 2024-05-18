@@ -10,9 +10,9 @@ const ServicesEdit = ({jsonDict, title, setDictFunc, arg1}) => {
             <h1 className="text-2xl font-bold mb-4">
                 {title}
             </h1>
-            <div className="block flex-wrap">
+            <div className="flex flex-wrap gap-y-12">
                 {Array.from(Object.keys(jsonDict)).map((key) => (
-                    <div key={key} className="flex items-start space-x-2">
+                    <div key={key} className="adminPannelServiceListWrap flex items-start space-x-2 bg-gray-800 p-2 rounded">
                         <div className="block">
                             <label className="block font-semibold mb-1">title:</label>
                             <input 
@@ -48,7 +48,7 @@ const ServicesEdit = ({jsonDict, title, setDictFunc, arg1}) => {
                     text: "Neuer Text",
                     image: "Kein Bild"
                 }; setDictFunc(jsonDict, arg1)} } 
-                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                className="bg-blue-500 text-white mt-4 px-4 py-2 rounded hover:bg-blue-600">
                     +
             </button>
         </div>

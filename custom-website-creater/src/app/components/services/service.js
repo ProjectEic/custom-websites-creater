@@ -28,7 +28,7 @@ const Service = (service) => {
         console.log(e)
     }
 
-    const serviceName = service.name.length > 20 ? service.name.slice(0, 20) + "..." : service.name;
+    // const serviceName = service.name.length > 20 ? service.name.slice(0, 20) + "..." : service.name;
     const serviceText = service.text.length > 110 ? service.text.slice(0, 110) + "..." : service.text;
 
     const serviceRef = useRef(null);
@@ -53,15 +53,15 @@ const Service = (service) => {
             initial={isInView ? animateAnimation : initialAnimation}
             animate={isInView ? animateAnimation : initialAnimation}
             transition={transitionAnimation}      
-            whileHover={!lightboxOpen ? { backgroundColor: "var(--main-color)", color: "var(--onThird-color)", cale: 1.025 } : {}}
+            whileHover={!lightboxOpen ? { backgroundColor: "var(--main-color)", color: "var(--third-color)", scale: 1.025 } : {}}
             whileTap={!lightboxOpen ? { scale: .95 } : {}}
             ref={serviceRef}
-            className="servicePreviewBox p-4 min-h-40vh w-[24vw] bg-[var(--third-color)] rounded-2xl text-[var(--onThird-color)]" 
+            className="servicePreviewBox p-4 min-h-40vh w-[100%] bg-[var(--third-color)] rounded-2xl text-[var(--onThird-color)] cursor-pointer" 
             onClick={(e) => toggleLightbox(e)}
         >
-            <h3 className="font-semibold text-3xl pr-4">{serviceName}</h3>
+            <h3 className="font-semibold text-3xl pr-4 word-break">{service.name}</h3>
             <p className="text-[var(--second-color)] py-2 text-lg font-normal leading-tigh">{serviceText}</p>
-            {service.hasImage ? handleShowIcon(serviceName) : <div className="h-[10vh]"></div>}
+            {service.hasImage ? handleShowIcon(service.name) : <div className="h-[10vh]"></div>}
 
             {lightboxOpen && (
                 <motion.div 
