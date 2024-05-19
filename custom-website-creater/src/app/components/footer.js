@@ -39,23 +39,23 @@ const Footer = ({ links, companySpecs }) => {
         className="mb-4 md:mb-0 flex items-stretch"
       > 
         <div className="flex-grow border-r pr-4"> 
-          <h3 className="headline-footer font-semibold text-3xl pr-4 text-white">
+          <h3 className="headline-footer font-semibold text-3xl pr-4 text-[var(--onSecondary-color)]">
             Infos:
           </h3>
           {Array.from(companySpecs.keys()).map((key, index) => (
-            <p key={index} className="text-gray-300 py-2 text-lg font-normal">
+            <p key={index} className="text-[var(--onSecondary-color)] py-2 text-lg font-normal">
               {key === "Email" ? (
                   <Link href={`mailto:${companySpecs.get(key)}`} className="">
-                    {key}:&nbsp;<span className="font-semibold underline hover:text-white">{companySpecs.get(key)}</span>
+                    <span className="opacity-80">{key}:&nbsp;</span><span className="font-semibold opacity-100 underline hover:underline-offset-8 transition-all">{companySpecs.get(key)}</span>
                   </Link>
-              ) : key === "Phone" ? (
+              ) : key === "Telefon" ? (
                   <Link href={`tel:${companySpecs.get(key)}`} className="">
-                      {key}:&nbsp;<span className="font-semibold underline hover:text-white">{companySpecs.get(key)}</span>
+                      <span className="opacity-80">{key}:&nbsp;</span><span className="font-semibold opacity-100 underline hover:underline-offset-8 transition-all">{companySpecs.get(key)}</span>
                   </Link>
               ) : (
                   <>
-                      {key}:&nbsp;
-                      <span className="font-semibold">{companySpecs.get(key)}</span>
+                      <span className="opacity-80">{key}:&nbsp;</span>
+                      <span className="font-semibold opacity-100">{companySpecs.get(key)}</span>
                   </>
               )}
             </p>
@@ -67,7 +67,7 @@ const Footer = ({ links, companySpecs }) => {
   };
   
   return (
-    <footer id="Contact" className="bg-gray-800 text-white py-8 px-4 md:px-8 grid grid-cols-3 w-full justify-between items-stretch gap-4 mx-0">
+    <footer id="Contact" className="bg-[var(--secondary-color)] text-[var(--onSecondary-color)] py-8 px-4 md:px-8 grid grid-cols-3 w-full justify-between items-stretch gap-4 mx-0">
         {footerCompanySpecifics()}
         <motion.ul 
           ref={footerLinksRef}
@@ -82,11 +82,11 @@ const Footer = ({ links, companySpecs }) => {
           
           {(links?links:[]).map((link, index) => (
             <li key={index} className="mb-2 md:mb-0 mr-4 flex items-center pt-4">
-              <Link className="text-gray-300 transition duration-300 flex gap-5 text-lg font-normal hover:text-white" href={link.link}>
+              <Link className="transition duration-300 flex gap-5 text-lg font-normal " href={link.link}>
                
                   <Image src={iconMapper[link.name.toLowerCase()]} alt={`${link.name}-icon`} className="mr-2 mt-1 h-fit" width={20} height={20} />
                 
-                <span className="hoverUnderlineEffect">{link.name}</span>
+                <span className="text-[var(--onSecondary-color)] hover:opacity-100 hoverUnderlineEffect">{link.name}</span>
               </Link>
             </li>
           ))}
@@ -98,10 +98,10 @@ const Footer = ({ links, companySpecs }) => {
           transition={transitionAnimation}
           className="mb-4 md:mb-0 mr-4 flex flex-col"
         > 
-          <Link className="hoverUnderlineEffect text-gray-300 py-2 font-normal hover:text-white w-fit text-[1.125rem]" href={impressumLink}>
+          <Link className="hoverUnderlineEffect text-[var(--onSecondary-color)] py-2 font-normal w-fit text-[1.125rem]" href={impressumLink}>
             Impressum
           </Link>
-          <Link className="hoverUnderlineEffect text-gray-300 py-2 font-normal hover:text-white w-fit text-[1.125rem]" href={datenschutzLink}>
+          <Link className="hoverUnderlineEffect text-[var(--onSecondary-color)] py-2 font-normal w-fit text-[1.125rem]" href={datenschutzLink}>
             Datenschutzerklärung
           </Link> 
         </motion.div>

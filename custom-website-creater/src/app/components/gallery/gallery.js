@@ -65,7 +65,7 @@ const Gallery = (props) => {
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.2, delay: 0.1}}
           onClick={closeLightbox}
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 w-100 h-100 pt-[10vh]"
+          className="fixed inset-0 flex items-center justify-center bg-[var(--background-color)] bg-opacity-90 w-100 h-100 pt-[10vh]"
         >
           <motion.div 
             initial={{ opacity: 0, y: "-100vh", scale: 0.9 }}
@@ -79,7 +79,7 @@ const Gallery = (props) => {
               onClick={closeLightbox}
               whileTap={{ scale: 0.95 }}
               whileHover={{ scale: 1.05 }}
-              className="absolute top-0 right-0 m-4 text-white text-5xl cursor-pointer transition-colors"
+              className="absolute top-0 right-0 m-4 text-[var(--onBackground-color)] text-5xl cursor-pointer transition-colors"
             >
               <BsX />
             </motion.button>
@@ -88,7 +88,7 @@ const Gallery = (props) => {
                 onClick={navigatePrevious}
                 whileTap={{ scale: 0.95 }}
                 whileHover={{ scale: 1.05 }}
-                className="text-white text-4xl cursor-pointer mr-4 transition-colors"
+                className="text-[var(--onBackground-color)] text-4xl cursor-pointer mr-4 transition-colors"
               >
                 <BsArrowLeft />
               </motion.button>
@@ -112,7 +112,7 @@ const Gallery = (props) => {
                 onClick={navigateNext}              
                 whileTap={{ scale: 0.95 }}
                 whileHover={{ scale: 1.05 }}
-                className="text-white text-4xl cursor-pointer ml-4 transition-colors"
+                className="text-[var(--onBackground-color)] text-4xl cursor-pointer ml-4 transition-colors"
               >
                 <BsArrowRight />
               </motion.button>

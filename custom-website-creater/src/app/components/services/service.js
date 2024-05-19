@@ -60,7 +60,7 @@ const Service = (service) => {
             onClick={(e) => toggleLightbox(e)}
         >
             <h3 className="font-semibold text-3xl pr-4 word-break">{service.name}</h3>
-            <p className="text-[var(--second-color)] py-2 text-lg font-normal leading-tigh">{serviceText}</p>
+            <p className="opacity-80 py-2 text-lg font-normal leading-tigh">{serviceText}</p>
             {service.hasImage ? handleShowIcon(service.name) : <div className="h-[10vh]"></div>}
 
             {lightboxOpen && (
@@ -70,7 +70,7 @@ const Service = (service) => {
                     exit="exit"
                     variants={lightboxVariants}
                     transition={{ duration: 0.2, delay: 0.4, bounceStiffness: 300, clamp: 20}}
-                    className="fixed z-40 inset-0 flex-col bg-black bg-opacity-90 px-[10vw] py-[10vh]"
+                    className="fixed z-40 inset-0 flex-col bg-[var(--background-color)] bg-opacity-90 px-[10vw] py-[10vh]"
                     onClick={toggleLightbox}
                 >
                     <motion.div 
@@ -81,17 +81,17 @@ const Service = (service) => {
                         onClick={preventToggleLightbox}
                     > 
                         {service.icon ? handleShowIcon(service.name) : <div className=""></div>}    
-                        <h3 className="font-semibold text-3xl pr-4 text-[var(--onSurface-color)] text-center">{service.name}</h3>
-                        <p className="text-[var(--second-color)] py-2 text-lg font-normal">{service.text}</p>
+                        <h3 className="font-semibold text-3xl pr-4 text-[var(--onMain-color)] text-center">{service.name}</h3>
+                        <p className="text-[var(--onMain-color)] opacity-85 py-2 text-lg font-normal">{service.text}</p>
                         <motion.button
                             whileTap={{ scale: 0.95 }}
                             whileHover={{ scale: 1.05 }}
                             onClick={toggleLightbox}
-                            className="absolute top-2 right-2 text-white text-5xl cursor-pointer hover:text-[var(--second-color)] transition-colors"
+                            className="absolute top-2 right-2 text-[var(--onBackground-color)] text-5xl cursor-pointer hover:opacity-85 transition-colors"
                         >
                             <BsX/>
                         </motion.button>
-                        {service.link && <a className="absolute bottom-4 left-4 underline hover:opacity-80 text-[var(--onMain-color)]" onClick={toggleLightbox} href={service.link}>{service.linkText}</a>}
+                        {service.link && <a className="text-[var(--onBackground-color)] absolute bottom-4 left-4 underline hover:opacity-85" onClick={toggleLightbox} href={service.link}>{service.linkText}</a>}
                     </motion.div>
                 </motion.div>
             )}

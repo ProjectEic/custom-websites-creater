@@ -15,13 +15,15 @@
     => the idea is to preselect a few coloring options and then let the customer choose which one he likes the most
   */
   --main-color: rgb(42, 0, 110);
-  --second-color: rgb(50, 50, 50);
+  --secondary-color: rgb(31, 41, 55);
   --third-color: rgb(255, 255, 255);
   --surface-color: rgb(0, 0, 0);
   --onMain-color: rgb(255, 255, 255);
-  --onSecond-color: rgb(255, 255, 255);
+  --onSecondary-color: rgb(255, 255, 255);
   --onThird-color: rgb(0, 0, 0);
   --onSurface-color: rgb(255, 255, 255);
+  --background-color: rgb(0, 0, 0);
+  --onBackground-color: rgb(255, 255, 255);
   
   /* main focus on websit => can be removed here (to make it thiccc again) XD */
   scrollbar-width: thin;
@@ -73,7 +75,7 @@ nav ul li:after {
   height: 2px;
   left: 0;
   position: absolute;
-  background: #fff;
+  background: var(--onMain-color);
   opacity: 0.6;
   transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
   width: 0;
@@ -91,7 +93,7 @@ footer ul {
 .hoverUnderlineEffect {
   text-decoration: none;
   position: relative;
-  opacity: 0.925;
+  opacity: 0.8;
 }
 
 .hoverUnderlineEffect:hover {
@@ -106,7 +108,7 @@ footer ul {
   height: 1px;
   left: 0;
   position: absolute;
-  background: #fff;
+  background: var(--onSecondary-color);
   opacity: 0.6;
   transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
   width: 0;
@@ -145,6 +147,7 @@ section:nth-of-type(2n){
   line-height: 1;
   padding-top: 10vh;
   padding-bottom: 10vh;
+  color: var(--onBackground-color);
 }
 
 .headlineConfig:hover{

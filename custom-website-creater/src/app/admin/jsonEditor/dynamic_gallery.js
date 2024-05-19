@@ -21,7 +21,7 @@ const DynamicGallery = ({title}) => {
             </h1>
             <div className="flex flex-wrap bg-gray-800 rounded">
                 {loadedImages.map((image) => (
-                    <div key={image} className="flex items-center m-4 p-1 relative border border-gray-300 rounded">
+                    <div key={image} className="flex flex-col flex-wrap items-center m-4 p-1 relative border border-gray-300 rounded justify-center">
                         <button 
                             onClick={() => { 
                                 deleteFile("/" + image.split("/").pop().split("?")[0]);
@@ -37,7 +37,6 @@ const DynamicGallery = ({title}) => {
                             width={200}
                             height={200}
                         />
-
                     </div>
                 ))}
             </div>
