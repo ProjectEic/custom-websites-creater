@@ -10,7 +10,7 @@ const Landing = (props) => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="landingHeadline absolute bottom-5 left-5 p-5 bg-[--main-color] rounded-xl max-w-[50%]"
             >
-                <h2 className="font-serif font-semibold font-size text-6xl tracking-wide pb-4 text-[var(--onMain-color)]">
+                <h2 className="font-serif font-semibold font-size text-6xl tracking-wide pb-4 text-[var(--onMain-color)] word-break">
                     {props.headline}
                 </h2>
                 <p className="text-[var(--onMain-color)] opacity-90">
