@@ -1,5 +1,5 @@
 import {app} from "./firebase_config";
-import { getStorage, ref, listAll, getDownloadURL, deleteObject, uploadBytes } from "firebase/storage";
+import { getStorage, ref, listAll, getDownloadURL, getMetadata, deleteObject, uploadBytes } from "firebase/storage";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
@@ -26,11 +26,29 @@ const uploadFile = (file) => {
     return uploadBytes(storageRef, file);
 }
 
-const deleteFile = (file) => {
+const fileExists = async (filePath) => {
+    try {
+        const fileRef = ref(storage, filePath);
+        await getMetadata(fileRef);
+        return true;
+    } catch (error) {
+        return false;
+    }
+};
+
+const deleteFile = async (file) => {
     const strRef = ref(storage, file.replace(/\%20/g, " "));
-    console.log(strRef);
-    return deleteObject(strRef);
-}
+    console.log("Attempting to delete:", strRef);
+    try {
+        if (await fileExists(strRef)) {
+            return deleteObject(strRef);
+        } else {
+            console.log("File does not exist.");
+        }
+    } catch (error) {
+        console.error("Error deleting file:", error);
+    }
+};
 
 const getFileListLinks = async () => {
     const listRef = ref(storage, "/");
