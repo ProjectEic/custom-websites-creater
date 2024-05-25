@@ -248,7 +248,6 @@ section:nth-of-type(2n){
 
   .servicesContainer{
     grid-template-columns: 1fr 1fr;
-    gap: 2.5%;
     justify-content: space-evenly;
   }
 
@@ -342,6 +341,36 @@ section:nth-of-type(2n){
   }
 }
 
+@media (max-height: 500px) {
+  .responsiveTabletHeader a, .responsiveMobileHeader a, .navSlide a{
+    font-size: 18px;
+  }
+}
+
+@media (max-height: 450px) {
+  .contentWrapper header, .responsiveTabletHeader, .responsiveMobileHeader, header nav{
+    height: 12vh;
+  }
+
+  .navSlide{
+    top: 12vh;
+    height: 88vh;
+  }
+
+  body{
+    scroll-padding-top: 12vh;
+  }
+
+  p, a, span{
+    font-size: 0.8rem !important;
+  }
+  .headlineConfig, .landingHeadline h2{
+    font-size: 1.5rem !important;
+  }
+  body h3{
+    font-size: 1.25rem !important;
+  }
+}
 
 /* Animations */
 
