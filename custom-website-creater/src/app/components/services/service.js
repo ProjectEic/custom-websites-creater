@@ -8,12 +8,12 @@ const Service = (service) => {
 
     const [lightboxOpen, setLightboxOpen] = useState(false);
 
-    const handleShowIcon = (name) => {
+    const handleShowIcon = () => {
         return <Image
             width={50}
             height={50}
             src={service.image}
-            alt={name + " icon"}
+            alt={"Bild zur Dienstleistung konnte nicht geladen werden."}
             className="object-contain w-[80%] pl-[10%] rounded-2xl text-gray-500"
         />;
     }
@@ -61,7 +61,7 @@ const Service = (service) => {
         >
             <h3 className="font-semibold text-3xl pr-4 word-break">{service.name}</h3>
             <p className="opacity-80 py-2 text-lg font-normal leading-tigh">{serviceText}</p>
-            {service.hasImage ? handleShowIcon(service.name) : <div className="h-[10vh]"></div>}
+            {service.hasImage ? handleShowIcon() : <div className="h-[10vh]"></div>}
 
             {lightboxOpen && (
                 <motion.div 
@@ -80,7 +80,6 @@ const Service = (service) => {
                         className="p-4 rounded-md bg-[var(--main-color)] h-full"
                         onClick={preventToggleLightbox}
                     > 
-                        {service.icon ? handleShowIcon(service.name) : <div className=""></div>}    
                         <h3 className="font-semibold text-3xl pr-4 text-[var(--onMain-color)] text-center">{service.name}</h3>
                         <p className="text-[var(--onMain-color)] opacity-85 py-2 text-lg font-normal">{service.text}</p>
                         <motion.button
