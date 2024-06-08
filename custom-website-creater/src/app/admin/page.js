@@ -11,6 +11,7 @@ import JsonDictTwoSidedEditChosen from "./jsonEditor/jsonDictTwoSidedEditChosen"
 import ServicesEdit from "./jsonEditor/servicesEdit";
 import DynamicGallery from "./jsonEditor/dynamic_gallery";
 import RotatingLoader from "../components/RotatingLoader";
+import { add_dict_starting_order, remove_dict_starting_order } from "../dict_transformer";
 
 
 const getDB = () => {
@@ -74,6 +75,7 @@ const Admin = () => {
     }
 
     const setDictFunc = (dict, arg1) => {
+        dict = add_dict_starting_order(dict);
         var newDict = currentJson;
         for (var k of arg1) {
             newDict = newDict[k];
@@ -101,25 +103,25 @@ const Admin = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
 
                     <JsonDictOneSidedEdit
-                        jsonDict={currentJson["landing"] || {}}
+                        jsonDict={remove_dict_starting_order(currentJson["landing"]) || {}}
                         title="Hauptseite"
                     />
 
 
                     <JsonDictOneSidedEdit 
-                        jsonDict={currentJson["company_info"] || {}} 
+                        jsonDict={remove_dict_starting_order(currentJson["company_info"]) || {}} 
                         title="Impressum und Datenschutz"
                     />
 
                     <JsonDictTwoSidedEdit
-                        jsonDict={(currentJson["footer"]|| {})["companySpecs"] || {}}
+                        jsonDict={remove_dict_starting_order((currentJson["footer"]|| {})["companySpecs"]) || {}}
                         title="Unternehmensdaten"
                         setDictFunc={setDictFunc}
                         arg1={["footer", "companySpecs"]}
                     />
 
                     <JsonDictTwoSidedEditChosen
-                        jsonDict={(currentJson["footer"]|| {})["links"] || {}}
+                        jsonDict={remove_dict_starting_order((currentJson["footer"]|| {})["links"]) || {}}
                         title="Links"
                         setDictFunc={setDictFunc}
                         Options={Object.keys(iconMapper)}
@@ -127,14 +129,14 @@ const Admin = () => {
                     />
 
                     <JsonDictTwoSidedEdit
-                        jsonDict={currentJson["reviews"] || {}}
+                        jsonDict={remove_dict_starting_order(currentJson["reviews"])|| {}}
                         title="Bewertungen"
                         setDictFunc={setDictFunc}
                         arg1={["reviews"]}
                     />
 
                     <ServicesEdit 
-                        jsonDict={currentJson["services"] || {}}
+                        jsonDict={remove_dict_starting_order(currentJson["services"]) || {}}
                         title="Dienstleistungen"
                         setDictFunc={setDictFunc}
                         arg1={["services"]}
