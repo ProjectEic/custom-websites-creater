@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import ReviewList from "./review_list";
 import { database} from "../../firebase_connecter";
-import { ref, get } from "firebase/database";
+import { ref, get, remove } from "firebase/database";
+import { remove_dict_starting_order } from "@/app/dict_transformer";
 
 const getReviewsDB = () => {
     const dbRef = ref(database, "/reviews");
@@ -18,7 +19,8 @@ const FirebaseReviewList = () => {;
     useEffect(() => { 
 
         getReviewsDB().then((res) => {
-            const v = res.val();
+            var v = res.val();
+            v = remove_dict_starting_order(v);
             setReviews(Object.keys(v).map((key) => {
                 return {"name": key, "text": v[key]}
             }))

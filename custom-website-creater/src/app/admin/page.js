@@ -53,6 +53,12 @@ const Admin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        // save all paths
+        for (var i = 0; i < paths_to_save.length; i++) {
+            setDictFunc(add_dict_starting_order(parallel_dicts[i]), paths_to_save[i]);
+        }
+
         const dbRef = ref(database, "/");
         var js12 = deepCpy(currentJson);
         console.log(js12);
@@ -75,17 +81,43 @@ const Admin = () => {
     }
 
     const setDictFunc = (dict, arg1) => {
-        dict = add_dict_starting_order(dict);
         var newDict = currentJson;
         for (var k of arg1) {
             newDict = newDict[k];
         }
-        newDict = dict;
+        
+        for (var k of Object.keys(dict)) {
+            newDict[k] = dict[k];
+        }
+        // remove all undefined keys
+        for (var k of Object.keys(newDict)) {
+            if (typeof dict[k] == "undefined") {
+                delete newDict[k];
+            }
+        }
+
         setCurrentJson(JSON.parse(JSON.stringify(currentJson)));
         // update the diplay
         
     }
 
+    const paths_to_save = [
+        ["landing"],
+        ["company_info"],
+        ["footer", "companySpecs"],
+        ["footer", "links"],
+        ["reviews"],
+        ["services"]
+    ]
+
+    const parallel_dicts = [
+        remove_dict_starting_order(currentJson["landing"]) || {},
+        remove_dict_starting_order(currentJson["company_info"]) || {},
+        remove_dict_starting_order((currentJson["footer"]|| {})["companySpecs"]) || {},
+        remove_dict_starting_order((currentJson["footer"]|| {})["links"]) || {},
+        remove_dict_starting_order(currentJson["reviews"]) || {},
+        remove_dict_starting_order(currentJson["services"]) || {}
+    ]
 
     // 1000ms delay to show loading screen
     // if not logged in, show login screen
@@ -103,25 +135,25 @@ const Admin = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
 
                     <JsonDictOneSidedEdit
-                        jsonDict={remove_dict_starting_order(currentJson["landing"]) || {}}
+                        jsonDict={parallel_dicts[0]}
                         title="Hauptseite"
                     />
 
 
                     <JsonDictOneSidedEdit 
-                        jsonDict={remove_dict_starting_order(currentJson["company_info"]) || {}} 
+                        jsonDict={parallel_dicts[1]} 
                         title="Impressum und Datenschutz"
                     />
 
                     <JsonDictTwoSidedEdit
-                        jsonDict={remove_dict_starting_order((currentJson["footer"]|| {})["companySpecs"]) || {}}
+                        jsonDict={parallel_dicts[2]}
                         title="Unternehmensdaten"
                         setDictFunc={setDictFunc}
                         arg1={["footer", "companySpecs"]}
                     />
 
                     <JsonDictTwoSidedEditChosen
-                        jsonDict={remove_dict_starting_order((currentJson["footer"]|| {})["links"]) || {}}
+                        jsonDict={parallel_dicts[3]}
                         title="Links"
                         setDictFunc={setDictFunc}
                         Options={Object.keys(iconMapper)}
@@ -129,14 +161,14 @@ const Admin = () => {
                     />
 
                     <JsonDictTwoSidedEdit
-                        jsonDict={remove_dict_starting_order(currentJson["reviews"])|| {}}
+                        jsonDict={parallel_dicts[4]}
                         title="Bewertungen"
                         setDictFunc={setDictFunc}
                         arg1={["reviews"]}
                     />
 
                     <ServicesEdit 
-                        jsonDict={remove_dict_starting_order(currentJson["services"]) || {}}
+                        jsonDict={parallel_dicts[5]}
                         title="Dienstleistungen"
                         setDictFunc={setDictFunc}
                         arg1={["services"]}
@@ -154,6 +186,8 @@ const Admin = () => {
 
                     <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-10"
                         onClick={() => {
+                                const e = {preventDefault: () => {}};
+                                handleSubmit(e);
                                 window.alert("Gespeichert");
                             }}
                     >Speichern</button>

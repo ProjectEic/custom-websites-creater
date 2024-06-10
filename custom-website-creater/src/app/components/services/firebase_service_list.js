@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import ServiceList from "./services_list";
 import { database} from "../../firebase_connecter";
 import { ref, get } from "firebase/database";
+import { remove_dict_starting_order } from "@/app/dict_transformer";
+
 
 const getServicesDB = () => {
     const dbRef = ref(database, "/services");
@@ -14,7 +16,8 @@ const FirebaseServiceList = () => {;
 
     useEffect(() => { 
         getServicesDB().then((res) => {
-            const v = res.val();
+            var v = res.val();
+            v = remove_dict_starting_order(v);
             setServices(Object.keys(v).map((key) => {
                 return {
                     "name": key, 

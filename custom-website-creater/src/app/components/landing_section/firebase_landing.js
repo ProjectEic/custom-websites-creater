@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Landing from "./landing_section";
 import { database} from "../../firebase_connecter";
 import { ref, get } from "firebase/database";
+import { remove_dict_starting_order } from "@/app/dict_transformer";
 
 const getLandingDB = () => {
     const dbRef = ref(database, "/landing");
@@ -15,7 +16,8 @@ const FirebaseLanding = () => {;
     useEffect(() => { 
 
         getLandingDB().then((res) => {
-            const v = res.val();
+            var v = res.val();
+            v = remove_dict_starting_order(v);
             setLanding(v);
         });
     }, []);
