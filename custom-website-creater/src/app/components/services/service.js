@@ -33,7 +33,7 @@ const Service = (service) => {
 
     const serviceRef = useRef(null);
     const isInView = useInView(serviceRef, { once: true });
-    const initialAnimation = { scale: .25, rotate: -45, opacity: 0 };
+    const initialAnimation = { scale: .5, rotate: -20, opacity: 0 };
     const animateAnimation = { scale: 1, rotate: 0, opacity: 1 };
     const transitionAnimation = {
         type: "spring",

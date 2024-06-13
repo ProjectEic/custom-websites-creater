@@ -23,7 +23,7 @@ const Review = (review) => {
 
     const reviewRef = useRef(null);
     const isInView = useInView(reviewRef, { once: true });
-    const initialAnimation = { scale: .25, rotate: -45, opacity: 0 };
+    const initialAnimation = { scale: .5, rotate: -25, opacity: 0 };
     const animateAnimation = { scale: 1, rotate: 0, opacity: 1 };
     const transitionAnimation = { duration: 0.2, ease: "easeInOut" };
     const lightboxVariants = {
