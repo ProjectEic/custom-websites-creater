@@ -42,7 +42,7 @@ const contentMap = {
         "footer": {title: "Kontakt", href:"#Contact"},
         "services": {title: "Dienstleistungen", href:"#Services"},
         "reviews": {title: "Bewertungen", href:"#Reviews"},
-        "gallery": {title: "Gallerie", href:"#Gallery"},
+        "gallery": {title: "Galerie", href:"#Gallery"},
         "datenschutz": {title: "Impressum", href:"/Datenschutz"},
         "impressum": {title: "Datenschutz", href:"/Impressum"},
     }
